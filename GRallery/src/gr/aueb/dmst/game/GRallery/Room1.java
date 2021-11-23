@@ -23,16 +23,16 @@ public class Room1 {
 
 		System.out.println("Your answer is:");
 		int option = keyboard.nextInt();
-		//int right = rightAnswer(q);
+		int right = rightAnswer(q);
 
 
-		if(option == rightAnswer(q)) {
+		if(option == right) {
 			System.out.println();
 			System.out.println("CORRECT");
 		} else {
 			System.out.println();
 			System.out.println("WRONG");
-			System.out.printf("The correct answer is: %s",answer[rightAnswer(q)]);
+			System.out.printf("The correct answer is: %s",answer[right]);
 			System.out.println("You can find more information in this link: https//.....");
 		}
 	}
