@@ -23,7 +23,7 @@ public class Room1 {
 
 		System.out.println("Your answer is:");
 		int option = keyboard.nextInt();
-		//int right = rightAnswer(q);
+		
 
 
 		if(option == rightAnswer(q)) {
