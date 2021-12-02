@@ -14,17 +14,17 @@ public class LabelImage extends JPanel {
     	//messageLabel.setSize(0, 100);
     	messageLabel.setLocation(15, 15);
     	messageLabel.setBounds(200,200,100,100);
-		messageLabel.setFont(new Font(null,Font.ITALIC,25));
-		messageLabel.setHorizontalTextPosition(JLabel.CENTER);
-		messageLabel.setVerticalTextPosition(JLabel.CENTER);
-		//messageLabel.setLayout(null);
-		add(messageLabel);
-		messageLabel.setVisible(true);
+	messageLabel.setFont(new Font(null,Font.ITALIC,25));
+	messageLabel.setHorizontalTextPosition(JLabel.CENTER);
+	messageLabel.setVerticalTextPosition(JLabel.CENTER);
+	//messageLabel.setLayout(null);
+	add(messageLabel);
+	messageLabel.setVisible(true);
 		
 		
     	ImageIcon image1 = new ImageIcon(getClass().getResource("/faros.jpg"));
-		JLabel label1 = new JLabel(image1);     
-		add( label1 );
+	JLabel label1 = new JLabel(image1);     
+	add( label1 );
         
         JTextArea label2 = new JTextArea("Test ", 10,10);
         label2.setText("Ο «Φάρος» εικάζεται πως αποτελεί μία απεικόνιση ενός πραγματικού φάρου σε κάποιο κυκλαδίτικο νησί με σκοπό σε συνδυασμό\n με άλλα έργα να αναδειχθεί το ελληνικό καλοκαίρι. Σε ποιον γνωστό Έλληνα ζωγράφο με καταγωγή από την Τήνο ανήκει ο\n συγκεκριμένος πίνακας;");
@@ -54,7 +54,7 @@ public class LabelImage extends JPanel {
         	public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == b[0]) {
                 	messageLabel.setForeground(Color.green);
-					messageLabel.setText("CORRECT");
+			messageLabel.setText("CORRECT");
                 }
             }
         });
@@ -63,7 +63,7 @@ public class LabelImage extends JPanel {
         	public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == b[1]) {
                 	messageLabel.setForeground(Color.red);
-					messageLabel.setText("WRONG");
+			messageLabel.setText("WRONG");
                 }    
             }
         });
@@ -72,7 +72,7 @@ public class LabelImage extends JPanel {
         	public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == b[2]) {
                 	messageLabel.setForeground(Color.red);
-					messageLabel.setText("WRONG");
+			messageLabel.setText("WRONG");
                 }
             }
         });
@@ -81,7 +81,7 @@ public class LabelImage extends JPanel {
         	public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == b[3]) {
                 	messageLabel.setForeground(Color.red);
-					messageLabel.setText("WRONG");
+			messageLabel.setText("WRONG");
                 }
             }
         });
