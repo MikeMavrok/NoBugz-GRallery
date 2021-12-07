@@ -138,8 +138,8 @@ public class TestLabel extends JPanel {
 		//b[question_number][answer_number].setBorder(BorderFactory.createRaisedBevelBorder());
 		//b[question_number][answer_number].setLayout(null);
 			
-			b[question_number][answer_number].addActionListener(new ActionListener() {
-	        	public void actionPerformed(ActionEvent e) {
+		b[question_number][answer_number].addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
 	                if(e.getSource() == b[question_number][0] ) {
 	                	//den mporei o xristis na allaksei tin apantisi tou kai monadiki tou epilogi na proxwrisei se epomeni erwtisi
 	                	b[question_number][1].setEnabled(false);
