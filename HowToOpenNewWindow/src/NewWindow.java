@@ -67,13 +67,13 @@ public class NewWindow implements ActionListener{
 		buttonchoises[0].setBounds(200,100,100,50);
 		buttonchoises[0].setFocusable(false);
 		
-		buttonchoises[1].setBounds(200,100,100,50);
+		buttonchoises[1].setBounds(300,100,100,50);
 		buttonchoises[1].setFocusable(false);
 		
-		buttonchoises[2].setBounds(200,100,100,50);
+		buttonchoises[2].setBounds(400,100,100,50);
 		buttonchoises[2].setFocusable(false);
 		
-		buttonchoises[3].setBounds(200,100,100,50);
+		buttonchoises[3].setBounds(500,100,100,50);
 		buttonchoises[3].setFocusable(false);
 		
 		
@@ -98,7 +98,7 @@ public class NewWindow implements ActionListener{
 		//create the ingredients for the frame
 		frame.setTitle("ROOM 1");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(600, 600);
+		frame.setSize(800, 600);
 		frame.setLayout(null);
 		
 		//display an icon in the top of the window...not yet
