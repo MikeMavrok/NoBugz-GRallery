@@ -59,20 +59,20 @@ public class MultiplePanels implements ActionListener{
 	MultiplePanels(){
 		
 		ConstructQuestions();
-    	ConstructImages();
-    	ConstructAnswers();
-    	CorrectAnswers();
+    		ConstructImages();
+    		ConstructAnswers();
+    		CorrectAnswers();
     
-    	//create 3 different panels to place our labels (image-text-buttons)
-    	JPanel panel1 = new JPanel(); 
-    	JPanel panel2 = new JPanel();
-    	JPanel panel3 = new JPanel();
+    		//create 3 different panels to place our labels (image-text-buttons)
+    		JPanel panel1 = new JPanel(); 
+    		JPanel panel2 = new JPanel();
+    		JPanel panel3 = new JPanel();
     	
-    	//disable button NextQuestion so as to the user not be able to press it unless they first answer existed question
+    		//disable button NextQuestion so as to the user not be able to press it unless they first answer existed question
 		NextQuestion.setEnabled(false);
 		//randomly choose a question 
 		Random rand = new Random();
-    	question_number = rand.nextInt(3);
+    		question_number = rand.nextInt(3);
     
 		panel1.setBackground(Color.white);
 		panel2.setBackground(Color.white);
@@ -92,7 +92,7 @@ public class MultiplePanels implements ActionListener{
 		
 		//add message that informs the player if their answer was correct or wrong to panel3
 		JLabel messageLabel = new JLabel();
-    	messageLabel.setSize(100, 100);
+    		messageLabel.setSize(100, 100);
 		messageLabel.setFont(new Font(null,Font.BOLD,25));
 		messageLabel.setHorizontalTextPosition(JLabel.CENTER);
 		messageLabel.setVerticalTextPosition(JLabel.CENTER);
@@ -132,8 +132,8 @@ public class MultiplePanels implements ActionListener{
 	                	if((b[question_number][0].getText()) == CorrectAnswers[question_number]) {
 	                		//if they answer correct, pressed button turns green and message "CORRECT" shows up
 	                		messageLabel.setForeground(Color.green);
-							messageLabel.setText("CORRECT");
-							b[question_number][0].setBackground(Color.GREEN);
+					messageLabel.setText("CORRECT");
+					b[question_number][0].setBackground(Color.GREEN);
 	                	}else {
 	                		//if they answer wrong, pressed button turns red and message "WRONG" shows up
 	                		messageLabel.setForeground(Color.red);
@@ -222,7 +222,5 @@ public class MultiplePanels implements ActionListener{
 		// TODO Auto-generated method stub
 		
 	}
-	public static void main(String[] args) {
-		MultiplePanels m =new MultiplePanels();	}
 	
 }
