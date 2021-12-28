@@ -81,6 +81,7 @@ public class MultiplePanels implements ActionListener{
 		JLabel questionLabel = new JLabel(); 
 		//allagi se JTextArea giati etsi vgainei olo se mia grammi
 		//JTextArea questionLabel = new JTextArea();
+		//questionLabel.setHighlighter(null);
 		questionLabel.setSize(200, 200);
 		questionLabel.setFont(new Font(null,Font.LAYOUT_RIGHT_TO_LEFT,25));
 		//questionLabel.setVerticalTextPosition(JLabel.BOTTOM);
