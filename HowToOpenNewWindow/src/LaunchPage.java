@@ -26,16 +26,16 @@ public class LaunchPage implements ActionListener{
 	
 	public LaunchPage() {
 		
-		//δημιουργω το κεντρικο κουμπι για να ξεκινησει ο παικτης το παιχνιδι
+		//create a central button 
 		bstart.setBounds(100,160,200,40);
 		bstart.addActionListener(this);
 		
-		//προσθετω το κουμπι στο παραθυρο
+		//add it in the frame
 		frame.add(bstart);
 		
-		//δημιουργειται το παραθυρο
+		//make the frame
 		frame.setTitle("GRallery");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //οταν παταμε χ κλεινει η εφαρμογη
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Γ―Γ΄Γ΅Γ­ Γ°Γ΅Γ΄Γ΅Γ¬Γ¥ Γ· ΓªΓ«Γ¥Γ©Γ­Γ¥Γ© Γ§ Γ¥Γ¶Γ΅Γ±Γ¬Γ―Γ£Γ§
 		frame.setSize(500, 500);
 		frame.setLayout(null);
 		
@@ -74,11 +74,12 @@ public class LaunchPage implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==bstart) {
-			frame.dispose(); //δεν εμφανιζονται πολλα νεα παραθυρα
+			frame.dispose(); //DISPLAY ONLY ONE WINDOW
+			
 			
 			NewWindow myWindow = new NewWindow();
 		}
-		/*they dont obey
+		/*DEN LITOYRGOUN
 		if(e.getSource()== highscoreItem) {
 			JLabel label2 = new JLabel();
 			label2.setText("The user : x got the highest score");
