@@ -35,11 +35,84 @@ public class MultiplePanels2 implements ActionListener{
 	ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	
 	int question_number;
-	
 	public void ConstructImages() {
-		images.add(new ImageIcon(getClass().getResource("/faros.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/delfoi.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/oreli.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/1.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/2.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/3.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/4.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/5.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/6.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/7.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/8.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/9.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/10.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/11.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/12.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/13.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/14.jpg")));		
+		images.add(new ImageIcon(getClass().getResource("/15.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/16.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/17.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/18.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/19.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/20.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/21.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/22.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/23.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/24.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/25.jpg")));
+		
+		images.add(new ImageIcon(getClass().getResource("/26.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/27.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/28.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/29.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/30.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/31.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/32.jpg")));		
+		images.add(new ImageIcon(getClass().getResource("/33.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/34.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/35.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/36.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/37.jpg")));	
+		images.add(new ImageIcon(getClass().getResource("/38.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/39.jpg")));	
+		images.add(new ImageIcon(getClass().getResource("/40.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/41.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/42.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/43.jpg")));		
+		images.add(new ImageIcon(getClass().getResource("/44.jpg")));		
+		images.add(new ImageIcon(getClass().getResource("/45.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/46.jpg")));		
+		images.add(new ImageIcon(getClass().getResource("/47.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/48.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/49.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/50.jpg")));
+		
+		images.add(new ImageIcon(getClass().getResource("/51.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/52.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/53.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/54.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/55.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/56.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/57.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/58.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/59.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/60.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/61.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/62.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/63.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/64.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/65.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/66.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/67.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/68.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/69.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/70.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/71.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/72.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/73.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/74.jpg")));
+
 	}
 	
 	public void ConstructAnswers() {
