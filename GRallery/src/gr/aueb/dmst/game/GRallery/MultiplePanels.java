@@ -112,7 +112,7 @@ public class MultiplePanels2 implements ActionListener{
 		images.add(new ImageIcon(getClass().getResource("/72.jpg")));
 		images.add(new ImageIcon(getClass().getResource("/73.jpg")));
 		images.add(new ImageIcon(getClass().getResource("/74.jpg")));
-
+		images.add(new ImageIcon(getClass().getResource("/75.jpg")));
 	}
 	
 	public void ConstructAnswers() {
