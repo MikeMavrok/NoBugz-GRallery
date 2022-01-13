@@ -4,6 +4,9 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
+import java.awt.Image;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,6 +19,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EtchedBorder;
+import javax.swing.WindowConstants;
+import javax.imageio.ImageIO;
+import java.io.IOException;
 
 public class MultiplePanels2 implements ActionListener{
 
@@ -23,96 +29,24 @@ public class MultiplePanels2 implements ActionListener{
 	JFrame frame = new JFrame("GRallery");
 	JButton[][] b = new JButton[10][4];
 	JButton NextQuestion = new JButton("Next Question");
+	JFrame HintFrame = new JFrame("Hint");
 	
-    //create 3 different panels to place our labels (image-text-buttons)
+    	//create 3 different panels to place our labels (image-text-buttons)
 	JPanel panel1 = new JPanel(); 
-    JPanel panel2 = new JPanel();
-    JPanel panel3  = new JPanel();
+   	JPanel panel2 = new JPanel();
+    	JPanel panel3  = new JPanel();
     
 	String CorrectAnswers [] = new String[10];
 	String[][] answers = new String[10][4];
-	String[] questions = new String[10];
+	String[][] questions = new String[10][2];
 	ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	
 	int question_number;
+	
 	public void ConstructImages() {
-		images.add(new ImageIcon(getClass().getResource("/1.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/2.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/3.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/4.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/5.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/6.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/7.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/8.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/9.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/10.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/11.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/12.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/13.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/14.jpg")));		
-		images.add(new ImageIcon(getClass().getResource("/15.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/16.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/17.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/18.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/19.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/20.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/21.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/22.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/23.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/24.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/25.jpg")));
-		
-		images.add(new ImageIcon(getClass().getResource("/26.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/27.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/28.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/29.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/30.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/31.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/32.jpg")));		
-		images.add(new ImageIcon(getClass().getResource("/33.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/34.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/35.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/36.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/37.jpg")));	
-		images.add(new ImageIcon(getClass().getResource("/38.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/39.jpg")));	
-		images.add(new ImageIcon(getClass().getResource("/40.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/41.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/42.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/43.jpg")));		
-		images.add(new ImageIcon(getClass().getResource("/44.jpg")));		
-		images.add(new ImageIcon(getClass().getResource("/45.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/46.jpg")));		
-		images.add(new ImageIcon(getClass().getResource("/47.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/48.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/49.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/50.jpg")));
-		
-		images.add(new ImageIcon(getClass().getResource("/51.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/52.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/53.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/54.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/55.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/56.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/57.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/58.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/59.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/60.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/61.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/62.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/63.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/64.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/65.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/66.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/67.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/68.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/69.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/70.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/71.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/72.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/73.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/74.jpg")));
-		images.add(new ImageIcon(getClass().getResource("/75.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/faros.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/delfoi.jpg")));
+		images.add(new ImageIcon(getClass().getResource("/oreli.jpg")));
 	}
 	
 	public void ConstructAnswers() {
@@ -125,9 +59,12 @@ public class MultiplePanels2 implements ActionListener{
 	}
 	
 	public void ConstructQuestions() {
-		questions[0] = "Ï «ÖÜñïò» åéêÜæåôáé ðùò áðïôåëåß ìßá áðåéêüíéóç åíüò ðñáãìáôéêïý öÜñïõ óå êÜðïéï êõêëáäßôéêï\n íçóß ìå óêïðü óå óõíäõáóìü ìå Üëëá Ýñãá íá áíáäåé÷èåß ôï åëëçíéêü êáëïêáßñé.Óå ðïéïí ãíùóôü\n ¸ëëçíá æùãñÜöï ìå êáôáãùãÞ áðü ôçí ÔÞíï áíÞêåé ï óõãêåêñéìÝíïò ðßíáêáò;";
-		questions[1] = "Ç óýíèåóç ôïõ ðßíáêá äéáìïñöþíåôáé óôç âÜóç ôçò áíôßèåóçò öùôåéíïý êáé óêïôåéíïý êáé óôï ÷ùñéóìü\n ôçò åðéöÜíåéáò óå ìåãÜëåò ÷ñùìáôéêÝò åíüôçôåò ìå ôá ÷ñþìáôá íá åíáëëÜóóïíôáé áðü ðïñôïêáëß êáé\n êåñáìéäß óå áíïé÷ôü ãêñßæï, ãáëÜæéï êáé ðñÜóéíï. Ôá Ýíôïíá êáé öùôåéíÜ ÷ñþìáôá ðïõ ÷ñçóéìïðïéåß\n ï Êùíóôáíôßíïò ÌáëÝáò, ôüóï óôï óõãêåêñéìÝíï üóï êáé óå Üëëá Ýñãá ôïõ, êáé ïé ðëáôéÝò ðéíåëéÝò\n ôïõ áðïôÝëåóáí áöïñìÞ ãéá íá ÷áñáêôçñéóôïýí ôá Ýñãá ôïõ áðü ôïõò óõíôçñçôéêïýò\n êñéôéêïýò åêåßíçò ôçò åðï÷Þò ùò:\n ";
-		questions[2] = "Ç éóôïñßá ðßóù áðü ôïí óõãêåêñéìÝíï ðßíáêá üðùò áöçãåßôáé ï ßäéïò ï æùãñÜöïò, ÐåñéêëÞò ÂõæÜíôéïò, åßíáé ç åîÞò:\n“H ìåãáëýôåñÞ ìïõ ÷áñÜ Þôáí üôáí ç Oñåëß ìïõ Ýëåãå:«Allons nous coucher» êáé ì’ Ýðáéñíå áðü ôï ÷Ýñé êáé ðçãáßíáìå\nãéá ýðíï óôçí êñåâáôïêÜìáñÞ ìáò. ¢íáâå Ýíá êåñß óå Ýíá ìðñïýôæéíï óáìíôÜíé åðÜíù óôïí êïìü.Åãþ ãñÞãïñá\nãñÞãïñá ãäõíüìïõíá êáé öüñáãá ôç ìáêñéÜ ðïõêáìßóá êé Ýìðáéíá óôï êñåâÜôé êé Ýêáíá ðùò êïéìüìïõíá, åíþ ìå ôï\nÝíá ìÜôé áíïé÷ôü ðáñáêïëïõèïýóá ôï ãäýóéìï ôçò Oñåëß ìðñïóôÜ óôïí êáèñÝöôç êáé ôç èáýìáæá. H Oñåëß Þôáíå \nêáëïöôéáãìÝíç, øçëÞ, ìå Üöèïíá êáóôáíÜ ìáëëéÜ. ÂÝâáéç ðùò åãþ êïéìÜìáé, ãäõíüôáíå óéãÜ óéãÜ, ãõñßæïíôÜò ìïõ\n ôçí ðëÜôç. Ôá äéÜöïñá íôáíôåëùôÜ ìåóïöüñéá, ìåãÜëá ëåðôÜ åóþñïõ÷á ðåñáóìÝíá ìå ñïæ êïñäÝëåò,ôçò Ýðåöôáí\n óôá ùñáßá ôçò ðüäéá, êáé ãõìíÞ åíôåëþò óêïýðéæå ìå ìéá êñÝìá ôï ðñüóùðü ôçò óêõììÝíç ðñïò ôïí êáèñÝöôç. Ìá\nåãþ äåí Ýâëåðá ìïíÜ÷á ôç ñÜ÷ç ôçò ìÝóá óôïí êáèñÝöôç äéÝêñéíá êáé ôï óöé÷ôü êáé óôÝñéï óôÞèïò, ðïõ ðïëëÝò öïñÝò\nôï êñáôïýóå ìå ôá ùñáßá ôçò ÷Ýñéá êáé ôï êáìÜñùíå êáé ç ßäéá.Óôï ôÝëïò öïñïýóå ìéá ìáêñéÜ íõ÷ôéêéÜ ìå êåíôÞìáôá \nóôï óôÞèïò êáé óôéò Üêñåò ôùí ìáíéêéþí, ðëçóßáæå ôï êåñß, ôï Ýóâçíå, êé åñ÷üôáíå óôï ìéêôü êñåâÜôé ìïõ íá ìå\n óêåðÜóåé êáëÜ.¸óêõâå êáé ìå öéëïýóå óôï ìÝôùðï. Åãþ, öõóéêÜ,Ýêáíá ðùò êïéìüìïõíá, êáé ïýôå áíÝðíåá, ãéáôß\n öïâüìïõíá ìÞðùò áêïýóåé ôçí êáñäéÜ ìïõ ðïõ ÷ôõðïýóå äõíáôÜ…” Ðïéïò ðéóôåýåôå üôé åßíáé ï ôßôëïò ôïõ Ýñãïõ;";
+		questions[0][0] = "Ο «Φάρος» εικάζεται πως αποτελεί μία απεικόνιση ενός πραγματικού φάρου σε κάποιο κυκλαδίτικο\n νησί με σκοπό σε συνδυασμό με άλλα έργα να αναδειχθεί το ελληνικό καλοκαίρι.Σε ποιον γνωστό\n Έλληνα ζωγράφο με καταγωγή από την Τήνο ανήκει ο συγκεκριμένος πίνακας;";
+		questions[1][0] = "Η σύνθεση του πίνακα διαμορφώνεται στη βάση της αντίθεσης φωτεινού και σκοτεινού και στο χωρισμό της επιφάνειας\nσε μεγάλες χρωματικές ενότητες με τα χρώματα να εναλλάσσονται από πορτοκαλί και κεραμιδί σε ανοιχτό γκρίζο, \nγαλάζιο και πράσινο. Τα έντονα και φωτεινά χρώματα που χρησιμοποιεί ο Κωνσταντίνος Μαλέας, τόσο στο \nσυγκεκριμένο όσο και σε άλλα έργα του, και οι πλατιές πινελιές του αποτέλεσαν αφορμή για να χαρακτηριστούν τα \nέργα του από τους συντηρητικούς κριτικούς εκείνης της εποχής ως:\n ";
+		questions[2][0] = "Η ιστορία πίσω από τον συγκεκριμένο πίνακα όπως αφηγείται ο ίδιος ο ζωγράφος, Περικλής Βυζάντιος, είναι η εξής:\n“H μεγαλύτερή μου χαρά ήταν όταν η Oρελί μου έλεγε:«Allons nous coucher» και μ’ έπαιρνε από το χέρι και πηγαίναμε\nγια ύπνο στην κρεβατοκάμαρή μας. Άναβε ένα κερί σε ένα μπρούτζινο σαμντάνι επάνω στον κομό.Εγώ γρήγορα\nγρήγορα γδυνόμουνα και φόραγα τη μακριά πουκαμίσα κι έμπαινα στο κρεβάτι κι έκανα πως κοιμόμουνα, ενώ με το\nένα μάτι ανοιχτό παρακολουθούσα το γδύσιμο της Oρελί μπροστά στον καθρέφτη και τη θαύμαζα. H Oρελί ήτανε \nκαλοφτιαγμένη, ψηλή, με άφθονα καστανά μαλλιά. Βέβαιη πως εγώ κοιμάμαι, γδυνότανε σιγά σιγά, γυρίζοντάς μου\n την πλάτη. Τα διάφορα νταντελωτά μεσοφόρια, μεγάλα λεπτά εσώρουχα περασμένα με ροζ κορδέλες,της έπεφταν\n στα ωραία της πόδια, και γυμνή εντελώς σκούπιζε με μια κρέμα το πρόσωπό της σκυμμένη προς τον καθρέφτη. Μα\nεγώ δεν έβλεπα μονάχα τη ράχη της μέσα στον καθρέφτη διέκρινα και το σφιχτό και στέριο στήθος, που πολλές φορές\nτο κρατούσε με τα ωραία της χέρια και το καμάρωνε και η ίδια.Στο τέλος φορούσε μια μακριά νυχτικιά με κεντήματα \nστο στήθος και στις άκρες των μανικιών, πλησίαζε το κερί, το έσβηνε, κι ερχότανε στο μικτό κρεβάτι μου να με\n σκεπάσει καλά.Έσκυβε και με φιλούσε στο μέτωπο. Εγώ, φυσικά,έκανα πως κοιμόμουνα, και ούτε ανέπνεα, γιατί\n φοβόμουνα μήπως ακούσει την καρδιά μου που χτυπούσε δυνατά…” Ποιος πιστεύετε ότι είναι ο τίτλος του έργου;";
+		questions[0][1] = "Hint: Ο πατέρας του ήταν επίσης ζωγράφος και \nθεωρείται πρωτοπόρος στην διαμόρφωση της \nδιδασκαλίας των Καλών Τεχνών στην Ελλάδα.";
+		questions[1][1] = " ";
+		questions[2][1] = " ";
 	}
 	
 	public void CorrectAnswers() {
@@ -142,7 +79,7 @@ public class MultiplePanels2 implements ActionListener{
 	MultiplePanels2(){
 		
 		
-			ConstructQuestions();
+		ConstructQuestions();
     		ConstructImages();
     		ConstructAnswers();
     		CorrectAnswers();
@@ -167,7 +104,6 @@ public class MultiplePanels2 implements ActionListener{
     		question_number = rand.nextInt(3);
     
 		
-		
 		//add image to panel1
 		JLabel imageLabel = new JLabel(images.get(question_number));
 		panel1.add(imageLabel);
@@ -177,7 +113,7 @@ public class MultiplePanels2 implements ActionListener{
 		questionLabel.setEditable(false);
 		questionLabel.setSize(200, 200);
 		questionLabel.setFont(new Font(null,Font.LAYOUT_LEFT_TO_RIGHT,20));
-		questionLabel.setText(questions[question_number]);
+		questionLabel.setText(questions[question_number][0]);
 		panel3.add(questionLabel,BorderLayout.BEFORE_FIRST_LINE);
 		
 		//add message that informs the player if their answer was correct or wrong to panel3
@@ -190,6 +126,45 @@ public class MultiplePanels2 implements ActionListener{
 		//add a scroll pane to panel3 
 		JScrollPane scroll =new JScrollPane(questionLabel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		panel3.add(scroll);
+		
+		//add HintButton to panel2
+		if(questions[question_number][1] != " ") {
+			JButton HintButton = new JButton();
+			HintButton.setPreferredSize(new Dimension(50, 50));
+			HintButton.setBackground(Color.lightGray);
+			try {
+				Image icon = ImageIO.read(getClass().getResource("hintaki.png"));
+				HintButton.setIcon(new ImageIcon(icon));
+			} catch (IOException ex) {
+			}
+			panel2.add(HintButton);
+			JTextArea HintLabel = new JTextArea();
+			HintFrame.setSize(500,300);
+			HintFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			HintFrame.getContentPane().setBackground( Color.WHITE );
+			HintFrame.setLocationRelativeTo(null);  
+
+			HintLabel.setText(questions[question_number][1]);
+			HintLabel.setSize(200, 200);
+			HintLabel.setFont(new Font(null,Font.CENTER_BASELINE,20));	
+			HintLabel.setEditable(false);
+			
+				try {
+					JLabel background = new JLabel(new ImageIcon((ImageIO.read(getClass().getResource("hint2.png")))));
+					HintFrame.add(background);
+				    	background.setLayout(new FlowLayout());
+				    	background.add(HintLabel);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			HintButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource() == HintButton) {
+						HintFrame.setVisible(true);
+					}
+				}
+			});
+		}
 		
 		//create buttons which contain 4 suggested answers
 		b[question_number][0] = new JButton(answers[question_number][0]);
@@ -218,7 +193,8 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][2].setEnabled(false);
 	                	b[question_number][3].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
-	                	
+	                	HintFrame.dispose();
+				
 	                	if((b[question_number][0].getText()) == CorrectAnswers[question_number]) {
 	                		//if they answer correct, pressed button turns green and message "CORRECT" shows up
 	                		messageLabel.setForeground(Color.green);
@@ -236,7 +212,7 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][2].setEnabled(false);
 	                	b[question_number][3].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
-	                	
+	                	HintFrame.dispose();
 	                	if(b[question_number][1].getText() == CorrectAnswers[question_number]) {
 	                		messageLabel.setForeground(Color.green);
 	                		messageLabel.setText("CORRECT");
@@ -252,7 +228,7 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][1].setEnabled(false);
 	                	b[question_number][3].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
-	                	
+	                	HintFrame.dispose();
 	                	if(b[question_number][2].getText() == CorrectAnswers[question_number]) {
 	                		messageLabel.setForeground(Color.green);
 	                		messageLabel.setText("CORRECT");
@@ -268,7 +244,7 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][1].setEnabled(false);
 	                	b[question_number][2].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
-	                	
+	                	HintFrame.dispose();
 	                	if(b[question_number][3].getText() == CorrectAnswers[question_number]) {
 	                		messageLabel.setForeground(Color.green);
 	                		messageLabel.setText("CORRECT");
@@ -297,8 +273,9 @@ public class MultiplePanels2 implements ActionListener{
 			frame.add(panel1,BorderLayout.BEFORE_FIRST_LINE);
 			frame.add(panel2,BorderLayout.PAGE_END);
 			frame.add(panel3,BorderLayout.CENTER);
-			frame.setSize(1200,1000);
+			frame.setSize(1200,1050);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setLocationRelativeTo(null);  
 			frame.setVisible(true);
 
 			
@@ -317,7 +294,7 @@ public class MultiplePanels2 implements ActionListener{
 			panel3.setVisible(false);
 			
 
-			 panel1 = new JPanel(); 
+			panel1 = new JPanel(); 
 		     panel2 = new JPanel();
 		     panel3  = new JPanel();
 		     
@@ -326,8 +303,7 @@ public class MultiplePanels2 implements ActionListener{
 		
 		}
 
-
 	
 	}
-	
 }
+
