@@ -56,6 +56,7 @@ public class WelcomePage {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+			frame.dispose();
 			if(e.getSource() == startButton) {
 				MultiplePanels multiplePanels = new MultiplePanels();
 			}
