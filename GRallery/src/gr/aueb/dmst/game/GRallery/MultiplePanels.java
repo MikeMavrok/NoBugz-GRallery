@@ -44,6 +44,7 @@ public class MultiplePanels implements ActionListener{
 	String[][] questions = new String[10][2];
 	ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	ArrayList<String> AnswerTexts = new ArrayList<String>();
+	ArrayList<String>Hints = new ArrayList<String>();
 	
 	int AnsweredQuestions = 0;//counts questions the player answered
 	int question_number;
@@ -158,6 +159,38 @@ public class MultiplePanels implements ActionListener{
 		AnswerTexts.add(" ");
 		AnswerTexts.add(" ");
 	}
+	
+	public void ConstructHints() {
+		for(int i = 0; i < 33; i++) {
+			Hints.add("Hint: Αυτά ήταν τα κυρίαρχα καλλιτεχνικά \nκινήματα στα τέλη του 19ου και αρχές του 20ου \nαιώνα με βασικούς εκπροσώπους τους τους \nΈντβαρτ Μουνκ, Γκουστάβ Μορώ και Όμπρεϊ \nΜπίρντσλι.");
+		}
+		Hints.add("Hint: Αυτή η πόλη είναι ο τόπος καταγωγής \nτου ποιητή Γιάννη Ρίτσου");
+		Hints.add(" ");
+		Hints.add(" ");
+		Hints.add(" ");
+		Hints.add(" ");
+		Hints.add("Hint: Το μουσικό όργανο που απεικονίζεται \nστον πίνακα ήταν και το αγαπημένο όργανο \nτου ήρωα Μακρυγιάννη.");
+		for(int i = 0; i < 8; i++) {
+			Hints.add(" ");
+		}
+		Hints.add("Hint: Υπάρχει πίνακας του γνωστού ζωγράφου \nΝικολάου Γύζη με τον ίδιο τίτλο και το \nάκουσμα του παραπέμπει στην μουσική.");
+		for(int i = 0; i < 8; i++) {
+			Hints.add(" ");
+		}
+		Hints.add("Hint: Κατά τη διάρκεια των Βαλκανικών \nΠολέμων πολέμησε ως έφεδρος αξιωματικός και \nπαρασημοφορήθηκε για τη δράση του, ενώ το \n1923 κέρδισε την έδρα ζωγραφικής της Σχολής \nΚαλών Τεχνών.");
+		for(int i = 0; i < 7; i++) {
+			Hints.add(" ");
+		}
+		Hints.add("Hint: Αυτά ήταν τα κυρίαρχα καλλιτεχνικά \nκινήματα στα τέλη του 19ου και αρχές του 20ου \nαιώνα με βασικούς εκπροσώπους τους τους \nΈντβαρτ Μουνκ, Γκουστάβ Μορώ και Όμπρεϊ \nΜπίρντσλι.");
+		Hints.add("Hint: Ο πατέρας του ήταν επίσης ζωγράφος και \nθεωρείται πρωτοπόρος στην διαμόρφωση της \nδιδασκαλίας των Καλών Τεχνών στην Ελλάδα.");
+		Hints.add("Hint: Αποτέλεσε έναν από τους πιο σημαντικούς \nΈλληνες ζωγράφους του 19ου αιώνα της λεγόμενης \n«Σχολής του Μονάχου».");
+		Hints.add("Hint: Γνωστή ποιητική συλλογή του Γιάννη \nΡίτσου φέρει τον ίδιο τίτλο.");
+		for(int i = 0; i < 5; i++) {
+			Hints.add(" ");
+		}
+		Hints.add("Hint: Στα ελληνικά ονομάζεται λαϊκή τέχνη.");
+	}
+	
 	public void AnswerText(int x) {
 		AnsweredQuestions = AnsweredQuestions + 1; //one more question gets answered
 		if(AnswerTexts.get(x) != " ") {
@@ -207,6 +240,7 @@ public class MultiplePanels implements ActionListener{
     		ConstructImages();
     		ConstructAnswers();
     		CorrectAnswers();
+		ConstructHints();
     		ConstructAnswerTexts();
     		
 	}
@@ -260,7 +294,7 @@ public class MultiplePanels implements ActionListener{
 		panel3.add(scroll);
 		
 		//add HintButton to panel2
-		if(questions[question_number][1] != " ") {
+		if(Hints.get(question_number) != " ") {
 			JButton HintButton = new JButton();
 			HintButton.setPreferredSize(new Dimension(50, 50));
 			HintButton.setBackground(Color.lightGray);
@@ -271,12 +305,12 @@ public class MultiplePanels implements ActionListener{
 			}
 			panel2.add(HintButton);
 			JTextArea HintLabel = new JTextArea();
-			HintFrame.setSize(500,300);
+			HintFrame.setSize(500,400);
 			HintFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			HintFrame.getContentPane().setBackground( Color.WHITE );
 			HintFrame.setLocationRelativeTo(null);  
 
-			HintLabel.setText(questions[question_number][1]);
+			HintLabel.setText(Hints.get(question_number));
 			HintLabel.setSize(200, 200);
 			HintLabel.setFont(new Font(null,Font.CENTER_BASELINE,20));	
 			HintLabel.setEditable(false);
