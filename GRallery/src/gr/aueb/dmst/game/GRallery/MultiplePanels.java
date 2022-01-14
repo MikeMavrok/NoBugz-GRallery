@@ -162,7 +162,7 @@ public class MultiplePanels implements ActionListener{
 	
 	public void ConstructHints() {
 		for(int i = 0; i < 33; i++) {
-			Hints.add("Hint: Αυτά ήταν τα κυρίαρχα καλλιτεχνικά \nκινήματα στα τέλη του 19ου και αρχές του 20ου \nαιώνα με βασικούς εκπροσώπους τους τους \nΈντβαρτ Μουνκ, Γκουστάβ Μορώ και Όμπρεϊ \nΜπίρντσλι.");
+			Hints.add(" ");
 		}
 		Hints.add("Hint: Αυτή η πόλη είναι ο τόπος καταγωγής \nτου ποιητή Γιάννη Ρίτσου");
 		Hints.add(" ");
