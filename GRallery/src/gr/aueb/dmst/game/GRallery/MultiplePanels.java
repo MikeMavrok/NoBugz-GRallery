@@ -23,7 +23,7 @@ import javax.swing.WindowConstants;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class MultiplePanels2 implements ActionListener{
+public class MultiplePanels implements ActionListener{
 
 
 	JFrame frame = new JFrame("GRallery");
@@ -98,7 +98,7 @@ public class MultiplePanels2 implements ActionListener{
 		}
 	}
 
-	MultiplePanels2(){
+	MultiplePanels(){
 		
 		
 		ConstructQuestions();
