@@ -25,12 +25,14 @@ import java.io.IOException;
 
 public class MultiplePanels implements ActionListener{
 
-
 	JFrame frame = new JFrame("GRallery");
-	JButton[][] b = new JButton[10][4];
-	JButton NextQuestion = new JButton("Next Question");
 	JFrame HintFrame = new JFrame("Hint");
 	JFrame AnswerFrame = new JFrame("Answer");
+	
+	JButton[][] b = new JButton[10][4];
+	JButton NextQuestion = new JButton("Next Question");
+	
+	JLabel messageLabel = new JLabel();
 	
     	//create 3 different panels to place our labels (image-text-buttons)
 	JPanel panel1 = new JPanel(); 
@@ -97,6 +99,31 @@ public class MultiplePanels implements ActionListener{
 			AnswerFrame.setVisible(true);
 		}
 	}
+	
+	public void AnswerButtonPressed(int QuestionNumber) {
+		//since a button is pressed, player can not change their answer and their only choice is to continue with NextQuestion 
+		for(int j = 0; j<4; j++) {
+			b[QuestionNumber][j].setEnabled(false);
+		}
+    		NextQuestion.setEnabled(true);
+    		HintFrame.dispose();
+    		AnswerText(question_number);
+	}
+	public void CorrectButtonPressed(int x) {
+		//if they answer correct, pressed button turns green and message "CORRECT" shows up
+		messageLabel.setForeground(Color.green);
+		messageLabel.setText("CORRECT");
+		messageLabel.setVisible(true);
+		b[question_number][x].setBackground(Color.GREEN);
+	}
+
+	public void WrongButtonPressed(int x) {
+		//if they answer wrong, pressed button turns red and message "WRONG" shows up
+		messageLabel.setForeground(Color.red);
+		messageLabel.setText("WRONG");
+		messageLabel.setVisible(true);
+		b[question_number][x].setBackground(Color.RED);
+	}
 
 	MultiplePanels(){
 		
@@ -124,7 +151,7 @@ public class MultiplePanels implements ActionListener{
 		
 		//randomly choose a question 
 		Random rand = new Random();
-    		if(AnsweredQuestions < 5) {
+    		if(AnsweredQuestions < 5) {//trexei mexri 5 erwtiseis mexri na ftiaxtoun oles
 			question_number = rand.nextInt(3);//ερωτήσεις 0-29  rand.nextInt(30);
 		} else if(AnsweredQuestions < 10) {
 			question_number =  30 + rand.nextInt(30);//ερωτήσεις 30-59
@@ -146,12 +173,13 @@ public class MultiplePanels implements ActionListener{
 		panel3.add(questionLabel,BorderLayout.BEFORE_FIRST_LINE);
 		
 		//add message that informs the player if their answer was correct or wrong to panel3
-		JLabel messageLabel = new JLabel();
     		messageLabel.setSize(100, 100);
 		messageLabel.setFont(new Font(null,Font.BOLD,25));
 		messageLabel.setHorizontalTextPosition(JLabel.CENTER);
 		messageLabel.setVerticalTextPosition(JLabel.CENTER);
+		messageLabel.setVisible(false);
 		panel3.add(messageLabel,BorderLayout.AFTER_LINE_ENDS);
+		
 		//add a scroll pane to panel3 
 		JScrollPane scroll =new JScrollPane(questionLabel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		panel3.add(scroll);
@@ -217,77 +245,38 @@ public class MultiplePanels implements ActionListener{
 			b[question_number][answer_number].addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	                if(e.getSource() == b[question_number][0] ) {
-	                	//since a button is pressed, player can not change their answer and their only choice is to continue with NextQuestion
-	                	b[question_number][1].setEnabled(false);
-	                	b[question_number][2].setEnabled(false);
-	                	b[question_number][3].setEnabled(false);
-	                	NextQuestion.setEnabled(true);
-	                	HintFrame.dispose();
-				AnswerText(question_number);
+	                	AnswerButtonPressed(question_number);
 	                	if((b[question_number][0].getText()) == CorrectAnswers[question_number]) {
-	                		//if they answer correct, pressed button turns green and message "CORRECT" shows up
-	                		messageLabel.setForeground(Color.green);
-					messageLabel.setText("CORRECT");
-					b[question_number][0].setBackground(Color.GREEN);
+	                		CorrectButtonPressed(0);
 	                	}else {
-	                		//if they answer wrong, pressed button turns red and message "WRONG" shows up
-	                		messageLabel.setForeground(Color.red);
-	                		messageLabel.setText("WRONG");
-	                		b[question_number][0].setBackground(Color.RED);
+	                		WrongButtonPressed(0);
 	                	}
 	                }else if(e.getSource() == b[question_number][1] ) {
 	                	
-	                	b[question_number][0].setEnabled(false);
-	                	b[question_number][2].setEnabled(false);
-	                	b[question_number][3].setEnabled(false);
-	                	NextQuestion.setEnabled(true);
-	                	HintFrame.dispose();
-				AnswerText(question_number);
+	                	AnswerButtonPressed(question_number);
 				
 	                	if(b[question_number][1].getText() == CorrectAnswers[question_number]) {
-	                		messageLabel.setForeground(Color.green);
-	                		messageLabel.setText("CORRECT");
-	                		b[question_number][1].setBackground(Color.GREEN);
+	                		CorrectButtonPressed(1);
 	                	}else {
-	                		messageLabel.setForeground(Color.red);
-	                		messageLabel.setText("WRONG");
-	                		b[question_number][1].setBackground(Color.RED);
+	                		WrongButtonPressed(1);
 	                	}
 	                }else if(e.getSource() == b[question_number][2] ) {
 	                	
-	                	b[question_number][0].setEnabled(false);
-	                	b[question_number][1].setEnabled(false);
-	                	b[question_number][3].setEnabled(false);
-	                	NextQuestion.setEnabled(true);
-	                	HintFrame.dispose();
-				AnswerText(question_number);
+	                	AnswerButtonPressed(question_number);
 				
 	                	if(b[question_number][2].getText() == CorrectAnswers[question_number]) {
-	                		messageLabel.setForeground(Color.green);
-	                		messageLabel.setText("CORRECT");
-	                		b[question_number][2].setBackground(Color.GREEN);
+	                		CorrectButtonPressed(2);
 	                	}else {
-	                		messageLabel.setForeground(Color.red);
-	                		messageLabel.setText("WRONG");
-	                		b[question_number][2].setBackground(Color.RED);
+	                		WrongButtonPressed(2);
 	                	}
 	                }else if(e.getSource() == b[question_number][3] ) {
 	                	
-	                	b[question_number][0].setEnabled(false);
-	                	b[question_number][1].setEnabled(false);
-	                	b[question_number][2].setEnabled(false);
-	                	NextQuestion.setEnabled(true);
-	                	HintFrame.dispose();
-				AnswerText(question_number);
+	                	AnswerButtonPressed(question_number);
 				
 	                	if(b[question_number][3].getText() == CorrectAnswers[question_number]) {
-	                		messageLabel.setForeground(Color.green);
-	                		messageLabel.setText("CORRECT");
-	                		b[question_number][3].setBackground(Color.GREEN);
+	                		CorrectButtonPressed(3);
 	                	}else {
-	                		messageLabel.setForeground(Color.red);
-	                		messageLabel.setText("WRONG");
-	                		b[question_number][3].setBackground(Color.RED);
+	                		WrongButtonPressed(3);
 	                	}
 	                }
 	        	}
@@ -301,14 +290,7 @@ public class MultiplePanels implements ActionListener{
 			panel2.add(NextQuestion, BorderLayout.SOUTH);
 
 			NextQuestion.addActionListener(this);
-			NextQuestion.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if(e.getSource()==NextQuestion) {
-						AnswerFrame.dispose();
-					}
-				}
-			});
-
+			
 			
 			//add panels to frame
 			frame.add(panel1,BorderLayout.BEFORE_FIRST_LINE);
@@ -336,7 +318,10 @@ public class MultiplePanels implements ActionListener{
 			panel1 = new JPanel(); 
 		     	panel2 = new JPanel();
 		     	panel3  = new JPanel();
-		     
+			
+		     	HintFrame.dispose();
+		   	AnswerFrame.dispose();
+			
 		     	setPanels();
 		     	setAllFrames();
 		
