@@ -30,6 +30,7 @@ public class MultiplePanels2 implements ActionListener{
 	JButton[][] b = new JButton[10][4];
 	JButton NextQuestion = new JButton("Next Question");
 	JFrame HintFrame = new JFrame("Hint");
+	JFrame AnswerFrame = new JFrame("Answer");
 	
     	//create 3 different panels to place our labels (image-text-buttons)
 	JPanel panel1 = new JPanel(); 
@@ -40,7 +41,9 @@ public class MultiplePanels2 implements ActionListener{
 	String[][] answers = new String[10][4];
 	String[][] questions = new String[10][2];
 	ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
+	ArrayList<String> AnswerTexts = new ArrayList<String>();
 	
+	int AnsweredQuestions = 0;//counts questions the player answered
 	int question_number;
 	
 	public void ConstructImages() {
@@ -73,8 +76,27 @@ public class MultiplePanels2 implements ActionListener{
 		CorrectAnswers[2] = answers[2][0];
 	}
 	
-	
-	
+	public void ConstructAnswerTexts() {
+		AnswerTexts.add("Ο Νίκος Λύτρας ήταν διακεκριμένος Έλληνας ζωγράφος των αρχών \nτου 20ού αιώνα. Σπούδασε ζωγραφική στο Σχολείο των Τεχνών \n(την μετέπειτα Ανωτάτη Σχολή Καλών Τεχνών) της Αθήνας από το \n1902 έως το 1906, με δάσκαλους τον πατέρα του Νικηφόρο Λύτρα και \nτον Γεώργιο Ιακωβίδη. Συνέχισε τις σπουδές του στην Ακαδημία \nτου Μονάχου από το 1907 έως το 1912, με δάσκαλο τον Λούντβιχ φον \nΛοφτς.Θεωρείται πως με την ιδιαίτερη τεχνοτροπία του σε σχέση με το \nχρώμα, εισήγαγε στην Ελλάδα τον εξπρεσιονισμό. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+	}
+	public void AnswerText(int x) {
+		AnsweredQuestions = AnsweredQuestions + 1; //one more question gets answered
+		if(AnswerTexts.get(x) != " ") {
+			JTextArea AnswerLabel = new JTextArea();
+			AnswerLabel.setText(AnswerTexts.get(x));
+			AnswerLabel.setSize(200, 200);
+			AnswerLabel.setFont(new Font(null,Font.CENTER_BASELINE,20));	
+			AnswerLabel.setEditable(false);
+			AnswerFrame.add(AnswerLabel);
+			AnswerFrame.setSize(700,300);
+			AnswerFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			AnswerFrame.getContentPane().setBackground( Color.WHITE );
+			AnswerFrame.setLocationRelativeTo(null); 
+			AnswerFrame.setVisible(true);
+		}
+	}
 
 	MultiplePanels2(){
 		
@@ -83,12 +105,12 @@ public class MultiplePanels2 implements ActionListener{
     		ConstructImages();
     		ConstructAnswers();
     		CorrectAnswers();
-    		
+    		ConstructAnswerTexts();
     		
 	}
 	
 	public void setPanels(){ 
-			panel1.setBackground(Color.white);
+		panel1.setBackground(Color.white);
     		panel2.setBackground(Color.white);
     		panel3.setBackground(Color.white);
     		
@@ -99,10 +121,17 @@ public class MultiplePanels2 implements ActionListener{
 	public void setAllFrames() {
     	//disable button NextQuestion so as to the user not be able to press it unless they first answer existed question
 		NextQuestion.setEnabled(false);
+		
 		//randomly choose a question 
 		Random rand = new Random();
-    		question_number = rand.nextInt(3);
-    
+    		if(AnsweredQuestions < 5) {
+			question_number = rand.nextInt(3);//ερωτήσεις 0-29  rand.nextInt(30);
+		} else if(AnsweredQuestions < 10) {
+			question_number =  30 + rand.nextInt(30);//ερωτήσεις 30-59
+		} else {
+			question_number = 60 + rand.nextInt(15);//ερωτήσεις 60-74
+		}
+		
 		
 		//add image to panel1
 		JLabel imageLabel = new JLabel(images.get(question_number));
@@ -194,7 +223,7 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][3].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
 	                	HintFrame.dispose();
-				
+				AnswerText(question_number);
 	                	if((b[question_number][0].getText()) == CorrectAnswers[question_number]) {
 	                		//if they answer correct, pressed button turns green and message "CORRECT" shows up
 	                		messageLabel.setForeground(Color.green);
@@ -213,6 +242,8 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][3].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
 	                	HintFrame.dispose();
+				AnswerText(question_number);
+				
 	                	if(b[question_number][1].getText() == CorrectAnswers[question_number]) {
 	                		messageLabel.setForeground(Color.green);
 	                		messageLabel.setText("CORRECT");
@@ -229,6 +260,8 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][3].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
 	                	HintFrame.dispose();
+				AnswerText(question_number);
+				
 	                	if(b[question_number][2].getText() == CorrectAnswers[question_number]) {
 	                		messageLabel.setForeground(Color.green);
 	                		messageLabel.setText("CORRECT");
@@ -245,6 +278,8 @@ public class MultiplePanels2 implements ActionListener{
 	                	b[question_number][2].setEnabled(false);
 	                	NextQuestion.setEnabled(true);
 	                	HintFrame.dispose();
+				AnswerText(question_number);
+				
 	                	if(b[question_number][3].getText() == CorrectAnswers[question_number]) {
 	                		messageLabel.setForeground(Color.green);
 	                		messageLabel.setText("CORRECT");
@@ -266,8 +301,14 @@ public class MultiplePanels2 implements ActionListener{
 			panel2.add(NextQuestion, BorderLayout.SOUTH);
 
 			NextQuestion.addActionListener(this);
-				
-			
+			NextQuestion.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource()==NextQuestion) {
+						AnswerFrame.dispose();
+					}
+				}
+			});
+
 			
 			//add panels to frame
 			frame.add(panel1,BorderLayout.BEFORE_FIRST_LINE);
@@ -278,7 +319,6 @@ public class MultiplePanels2 implements ActionListener{
 			frame.setLocationRelativeTo(null);  
 			frame.setVisible(true);
 
-			
 			
 	}
 	
@@ -293,13 +333,12 @@ public class MultiplePanels2 implements ActionListener{
 			panel2.setVisible(false);
 			panel3.setVisible(false);
 			
-
 			panel1 = new JPanel(); 
-		     panel2 = new JPanel();
-		     panel3  = new JPanel();
+		     	panel2 = new JPanel();
+		     	panel3  = new JPanel();
 		     
-		     setPanels();
-		     setAllFrames();
+		     	setPanels();
+		     	setAllFrames();
 		
 		}
 
