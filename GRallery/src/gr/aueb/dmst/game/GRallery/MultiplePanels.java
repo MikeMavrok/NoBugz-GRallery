@@ -23,13 +23,14 @@ import javax.swing.WindowConstants;
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
+
 public class MultiplePanels implements ActionListener{
 
 	JFrame frame = new JFrame("GRallery");
 	JFrame HintFrame = new JFrame("Hint");
 	JFrame AnswerFrame = new JFrame("Answer");
 	
-	JButton[][] b = new JButton[10][4];
+	JButton[][] b = new JButton[75][4];
 	JButton NextQuestion = new JButton("Next Question");
 	
 	JLabel messageLabel = new JLabel();
@@ -39,15 +40,16 @@ public class MultiplePanels implements ActionListener{
    	JPanel panel2 = new JPanel();
     	JPanel panel3  = new JPanel();
     
-	String CorrectAnswers [] = new String[10];
-	String[][] answers = new String[10][4];
-	String[][] questions = new String[10][2];
-	ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
-	ArrayList<String> AnswerTexts = new ArrayList<String>();
-	ArrayList<String>Hints = new ArrayList<String>();
+    	String CorrectAnswers [] = new String[75];
+    	String[][] answers = new String[75][4];
+    	ArrayList<String> questions = new ArrayList<String>();
+    	ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
+    	ArrayList<String> AnswerTexts = new ArrayList<String>();
+    	ArrayList<String>Hints = new ArrayList<String>();
 	
 	int AnsweredQuestions = 0;//counts questions the player answered
 	int question_number;
+	
 	
 	public void ConstructImages() {
 		images.add(new ImageIcon(getClass().getResource("/1.jpg")));
