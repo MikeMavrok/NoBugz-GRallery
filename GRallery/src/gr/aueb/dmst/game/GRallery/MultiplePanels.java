@@ -161,7 +161,11 @@ public class MultiplePanels implements ActionListener{
 	}
 	
 	public void ConstructHints() {
-		for(int i = 0; i < 33; i++) {
+		for(int i = 0; i < 27; i++) {
+			Hints.add(" ");
+		}
+		Hints.add("Hint: Είναι ο πλησιέστερος σταθμός του \nηλεκτρικού στο Οικονομικό Πανεπιστήμιο Αθηνών.");
+		for(int i = 0; i < 5; i++) {
 			Hints.add(" ");
 		}
 		Hints.add("Hint: Αυτή η πόλη είναι ο τόπος καταγωγής \nτου ποιητή Γιάννη Ρίτσου");
@@ -178,7 +182,7 @@ public class MultiplePanels implements ActionListener{
 			Hints.add(" ");
 		}
 		Hints.add("Hint: Κατά τη διάρκεια των Βαλκανικών \nΠολέμων πολέμησε ως έφεδρος αξιωματικός και \nπαρασημοφορήθηκε για τη δράση του, ενώ το \n1923 κέρδισε την έδρα ζωγραφικής της Σχολής \nΚαλών Τεχνών.");
-		for(int i = 0; i < 7; i++) {
+		for(int i = 0; i < 8; i++) {
 			Hints.add(" ");
 		}
 		Hints.add("Hint: Αυτά ήταν τα κυρίαρχα καλλιτεχνικά \nκινήματα στα τέλη του 19ου και αρχές του 20ου \nαιώνα με βασικούς εκπροσώπους τους τους \nΈντβαρτ Μουνκ, Γκουστάβ Μορώ και Όμπρεϊ \nΜπίρντσλι.");
@@ -194,6 +198,7 @@ public class MultiplePanels implements ActionListener{
 	public void AnswerText(int x) {
 		AnsweredQuestions = AnsweredQuestions + 1; //one more question gets answered
 		if(AnswerTexts.get(x) != " ") {
+			//if there is an explanation for the answer it shows up in a new frame
 			JTextArea AnswerLabel = new JTextArea();
 			AnswerLabel.setText(AnswerTexts.get(x));
 			AnswerLabel.setSize(200, 200);
@@ -209,28 +214,28 @@ public class MultiplePanels implements ActionListener{
 	}
 	
 	public void AnswerButtonPressed(int QuestionNumber) {
-		//since a button is pressed, player can not change their answer and their only choice is to continue with NextQuestion 
+		//since a button is pressed, player can not change their answer and their only choice is to continue with NextQuestion, if HintFrame is opened it gets closed and an answer's explanation shows up if existed
 		for(int j = 0; j<4; j++) {
 			b[QuestionNumber][j].setEnabled(false);
 		}
     		NextQuestion.setEnabled(true);
     		HintFrame.dispose();
-    		AnswerText(question_number);
+    		AnswerText(QuestionNumber);
 	}
-	public void CorrectButtonPressed(int x) {
+	public void CorrectButtonPressed(int QuestionNumber,int x) {
 		//if they answer correct, pressed button turns green and message "CORRECT" shows up
 		messageLabel.setForeground(Color.green);
 		messageLabel.setText("CORRECT");
 		messageLabel.setVisible(true);
-		b[question_number][x].setBackground(Color.GREEN);
+		b[QuestionNumber][x].setBackground(Color.GREEN);
 	}
 
-	public void WrongButtonPressed(int x) {
+	public void WrongButtonPressed(int QuestionNumber,int x) {
 		//if they answer wrong, pressed button turns red and message "WRONG" shows up
 		messageLabel.setForeground(Color.red);
 		messageLabel.setText("WRONG");
 		messageLabel.setVisible(true);
-		b[question_number][x].setBackground(Color.RED);
+		b[QuestionNumber][x].setBackground(Color.RED);
 	}
 
 	MultiplePanels(){
@@ -261,11 +266,11 @@ public class MultiplePanels implements ActionListener{
 		//randomly choose a question 
 		Random rand = new Random();
     		if(AnsweredQuestions < 5) {//trexei mexri 5 erwtiseis mexri na ftiaxtoun oles
-			question_number = rand.nextInt(3);//ερωτήσεις 0-29  rand.nextInt(30);
+			question_number = rand.nextInt(3);//ερωτήσεις 0-25  rand.nextInt(26);
 		} else if(AnsweredQuestions < 10) {
-			question_number =  30 + rand.nextInt(30);//ερωτήσεις 30-59
+			question_number =  26 + rand.nextInt(26);//ερωτήσεις 26-51
 		} else {
-			question_number = 60 + rand.nextInt(15);//ερωτήσεις 60-74
+			question_number = 52 + rand.nextInt(23);//ερωτήσεις 52-74
 		}
 		
 		
@@ -356,36 +361,36 @@ public class MultiplePanels implements ActionListener{
 	                if(e.getSource() == b[question_number][0] ) {
 	                	AnswerButtonPressed(question_number);
 	                	if((b[question_number][0].getText()) == CorrectAnswers[question_number]) {
-	                		CorrectButtonPressed(0);
+	                		CorrectButtonPressed(question_number,0);
 	                	}else {
-	                		WrongButtonPressed(0);
+	                		WrongButtonPressed(question_number,0);
 	                	}
 	                }else if(e.getSource() == b[question_number][1] ) {
 	                	
 	                	AnswerButtonPressed(question_number);
 				
 	                	if(b[question_number][1].getText() == CorrectAnswers[question_number]) {
-	                		CorrectButtonPressed(1);
+	                		CorrectButtonPressed(question_number,1);
 	                	}else {
-	                		WrongButtonPressed(1);
+	                		WrongButtonPressed(question_number,1);
 	                	}
 	                }else if(e.getSource() == b[question_number][2] ) {
 	                	
 	                	AnswerButtonPressed(question_number);
 				
 	                	if(b[question_number][2].getText() == CorrectAnswers[question_number]) {
-	                		CorrectButtonPressed(2);
+	                		CorrectButtonPressed(question_number,2);
 	                	}else {
-	                		WrongButtonPressed(2);
+	                		WrongButtonPressed(question_number,2);
 	                	}
 	                }else if(e.getSource() == b[question_number][3] ) {
 	                	
 	                	AnswerButtonPressed(question_number);
 				
 	                	if(b[question_number][3].getText() == CorrectAnswers[question_number]) {
-	                		CorrectButtonPressed(3);
+	                		CorrectButtonPressed(question_number,3);
 	                	}else {
-	                		WrongButtonPressed(3);
+	                		WrongButtonPressed(question_number,3);
 	                	}
 	                }
 	        	}
