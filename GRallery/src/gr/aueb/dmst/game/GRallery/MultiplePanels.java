@@ -864,13 +864,14 @@ public class MultiplePanels implements ActionListener{
 		
 		//randomly choose a question 
 		Random rand = new Random();
-    		if(AnsweredQuestions < 5) {//trexei mexri 5 erwtiseis mexri na ftiaxtoun oles
-			question_number = rand.nextInt(3);//ερωτήσεις 0-25  rand.nextInt(26);
+    		if(AnsweredQuestions < 5) {
+			question_number = rand.nextInt(26);//ερωτήσεις 0-25  rand.nextInt(26);
 		} else if(AnsweredQuestions < 10) {
 			question_number =  26 + rand.nextInt(26);//ερωτήσεις 26-51
 		} else {
 			question_number = 52 + rand.nextInt(23);//ερωτήσεις 52-74
 		}
+		
 		
 		
 		//add image to panel1
