@@ -1,3 +1,4 @@
+package gr.aueb.dmst.game.GRallery;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -22,7 +23,6 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.WindowConstants;
 import javax.imageio.ImageIO;
 import java.io.IOException;
-
 
 public class MultiplePanels implements ActionListener{
 
@@ -49,7 +49,6 @@ public class MultiplePanels implements ActionListener{
 	
 	int AnsweredQuestions = 0;//counts questions the player answered
 	int question_number;
-	
 	
 	public void ConstructImages() {
 		images.add(new ImageIcon(getClass().getResource("/1.jpg")));
@@ -131,7 +130,6 @@ public class MultiplePanels implements ActionListener{
 		images.add(new ImageIcon(getClass().getResource("/75.jpg")));
 
 	}
-	
 	public void ConstructAnswers() {
 
 
@@ -664,8 +662,7 @@ public class MultiplePanels implements ActionListener{
 		}
 	
 
-	
-	
+
 	public void ConstructQuestions() { questions.add("Ποια άλλη διάσημη ζωγράφο που γνωρίζετε \n σας θυμίζει η εικονιζόμενη;");
 	questions.add("Πρόκειται για έναν Άγγλο αριστοκράτη με ταραχώδη βίο, \n λόγιο, πολιτικό, και μια εμβληματική μορφή του ρομαντισμού.\n Συγκαταλέγεται στους μεγαλύτερους Βρετανούς ποιητές και παραμένει ακόμα και σήμερα δημοφιλής.\n Χαρακτηριστικό του έργο αποτελεί το ποίημα «Don Juan».\n Ποιο είναι το όνομά του;");
 	questions.add("Ποια ευαγγελική σκηνή αποτυπώνεται στην παραπάνω εικόνα;");
@@ -746,19 +743,171 @@ public class MultiplePanels implements ActionListener{
 
 
 	
-	
 	public void CorrectAnswers() {
-		CorrectAnswers[0] = answers[0][1];
-		CorrectAnswers[1] = answers[1][1];
-		CorrectAnswers[2] = answers[2][0];
+		for (int i=0; i<75 ; i++) {
+		CorrectAnswers[i] = answers[i][1];
+		
+		//CorrectAnswers[1] = answers[1][1];
+		//CorrectAnswers[2] = answers[2][0];
+		}
 	}
 	
 	public void ConstructAnswerTexts() {
-		//AnswerTexts.add("Ο Νίκος Λύτρας ήταν διακεκριμένος Έλληνας ζωγράφος των αρχών \nτου 20ού αιώνα. Σπούδασε ζωγραφική στο Σχολείο των Τεχνών \n(την μετέπειτα Ανωτάτη Σχολή Καλών Τεχνών) της Αθήνας από το \n1902 έως το 1906, με δάσκαλους τον πατέρα του Νικηφόρο Λύτρα και \nτον Γεώργιο Ιακωβίδη. Συνέχισε τις σπουδές του στην Ακαδημία \nτου Μονάχου από το 1907 έως το 1912, με δάσκαλο τον Λούντβιχ φον \nΛοφτς.Θεωρείται πως με την ιδιαίτερη τεχνοτροπία του σε σχέση με το \nχρώμα, εισήγαγε στην Ελλάδα τον εξπρεσιονισμό. ");
-		for (int i=0; i<75 ; i++){
- 		AnswerTexts.add(" ");
+		
+		AnswerTexts.add("\r\n"
+				+ "Η Φρίντα Κάλο ήταν Μεξικάνα ζωγράφος.\n"
+				+ " Γεννήθηκε το 1907 και πέθανε το 1954.\n"
+				+ " Επαναστάτρια που απέδωσε σε έργα τέχνης\n"
+				+ " τον πόνο της και τις ιδέες της παλεύοντας \n"
+				+ " με όλα τα κοινωνικά ταμπού του περασμένου αιώνα!\r\n");
 		AnswerTexts.add(" ");
-		}
+		AnswerTexts.add("Ο Νικόλαος Δοξαράς υπήρξε ζωγράφος της Επτανησιακής Σχολής, \n"
+				+ " γιος του ζωγράφου και θεωρητικού της τέχνης Παναγιώτη Δοξαρά. \n"
+				+ "Ένα από τα σημαντικότερα έργα του ήταν η διακόσμηση του Θόλου\n"
+				+ " του ναού της Φανερωμένης στη Ζάκυνθο.\n"
+				+ " Η διακόσμηση του παρουσιάζει ιδιαίτερο ενδιαφέρον γιατί,\n"
+				+ "αντί για τη συνηθισμένη παράσταση της μορφής του Παντοκράτορα,\n"
+				+ " εικονίζονται η Γέννηση, η Κοίμηση και η Μετάσταση της Θεοτόκου,\n"
+				+ " σύμφωνα με τα πρότυπα της καθολικής εκκλησίας! ");
+		AnswerTexts.add("Ο τίτλος που έδωσε ο καλλιτέχνης στον πίνακα είναι «Άνοιξη στην Οίτη» \n"
+				+ "και προκειμένου να αναδείξει αυτήν την εποχή του χρόνου χρησιμοποίησε διάφορες\n"
+				+ "αποχρώσεις του πράσινου και έκανε εμφανή τα πυκνά φύλλα των δέντρων, τις παπαρούνες \n"
+				+ "και τα διάφορα λουλούδια στο έδαφος, χαρακτηριστικά στοιχεία της άνοιξης. ");
+		AnswerTexts.add("Μετά από τον αυλότοιχο και την εκκλησία οδηγούμαστε στη βαθιά γαλάζια θάλασσα \n"
+				+ "στο κέντρο της οποίας βρίσκεται το νησάκι της Καμένης με το σβησμένο ηφαίστειο, \n"
+				+ "χαρακτηριστικό γνώρισμα του νησιού της Σαντορίνης. Για αυτό άλλωστε αποτελεί και τον τίτλο του έργου. ");
+		AnswerTexts.add("Η προσωπογραφία ήταν ευρύτατα διαδομένη στους αρχαίους Έλληνες και τους Ρωμαίους! \n"
+				+ "Ονομαστές στην αρχαιότητα για την τεχνική τους αρτιότητα ήταν μεταξύ άλλων οι προσωπογραφίες του Αρχέλαου,\n"
+				+ " όπως και η απεικόνιση του Μεγάλου Αλεξάνδρου από τον ζωγράφο Απελλή. \n"
+				+ "Η εξέλιξη της προσωπογραφίας το 15ο αιώνα ήταν επίσης σημαντική, \n"
+				+ "καθώς ζωγράφοι όπως ο Μπελίνι και ο Μποτιτσέλι έδωσαν αριστουργήματα του είδους.  ");
+		AnswerTexts.add("Ο Λάντσας Βικέντιος, ιταλικής καταγωγής, σπούδασε ζωγραφική στην Ακαδημία Καλών Τεχνών της Βενετίας.\n"
+				+ " Μετά την αποτυχία της ιταλικής επανάστασης εναντίον των Αυστριακών το 1848, \n"
+				+ "στην οποία έλαβε μέρος, κατέφυγε ως πολιτικός εξόριστος στην Ελλάδα. \n"
+				+ "Για την προσφορά του στους αγώνες της πατρίδας του τιμήθηκε αργότερα με  αργυρό παράσημο και με τρία ιταλικά παράσημα.\n"
+				+ " Χρησιμοποιώντας κατά κύριο λόγο την υδατογραφία, απεικόνισε αρχαιολογικούς τόπους και μνημεία,\n"
+				+ " καθιερώνοντας ως ιδιαίτερο αυτό το είδος της τοπιογραφίας. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο Κωνσταντίνος Βολανάκης, ο δημιουργός του έργου, είναι ο πιο σημαντικός Έλληνας θαλασσογράφος του 19ου αιώνα.\n"
+				+ " Το συγκεκριμένο έργο έχει ως θέμα μια σκηνή τσίρκου, από ένα φεστιβάλ που οργανώνεται μέχρι και σήμερα κάθε Οκτώβριο στο Μόναχο,\n"
+				+ " το Oktoberfest. Από τις κατάμεστες από κόσμο κερκίδες ενός αυτοσχέδιου θεάτρου οι θεατές παρακολουθούν τα «ακροβατικά» \n"
+				+ " που εκτελούν δύο ελέφαντες σε μια κυκλική εξέδρα, υπό τις εντολές ενός θηριοδαμαστή. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Τα \"Αρραβωνιάσματα των παιδιών\" είναι ένα έργο που απέσπασε πολλές διακρίσεις,\n"
+				+ " απεικονίζει δε ένα έθιμο από τον καιρό της Τουρκοκρατίας. Οι γονείς αρραβώνιαζαν τα παιδιά από μικρά,\n"
+				+ " ίσως για να τα προστατέψουν από το παιδομάζωμα. Στο εσωτερικό ενός χωριάτικου σπιτιού ξετυλίγεται η χαρούμενη σκηνή\n"
+				+ " σε ημικυκλική διάταξη. Στο κέντρο της σκηνής ο ιερέας έχει ήδη περάσει το δαχτυλίδι στο ξαφνιασμένο αγοράκι,\n"
+				+ " ενώ το κοριτσάκι χαμηλοκοιτάζει ντροπαλό στο κάλεσμα του γέροντα να του φορέσει τον αρραβώνα. \n"
+				+ "Οι γονείς και οι συγγενείς συμμετέχουν με χαρούμενη διάθεση στη σκηνή. ");
+		AnswerTexts.add("Ο πίνακας φέρει τον τίτλο «Ο τεχνοκρίτης», που σημαίνει κριτικός έργων τέχνης. ");
+		AnswerTexts.add("\r\n"
+				+ "Το Πήλιο είναι βουνό στο Νομό Μαγνησίας, με ύψος 1.624 μέτρα. Κατά την Ελληνική μυθολογία ήταν θερινή κατοικία των θεών\n"
+				+ " και πατρίδα των Κενταύρων.\r\n");
+		AnswerTexts.add("Το 2015, το λιμάνι του Πειραιά ήταν το έκτο μεγαλύτερο λιμάνι\n"
+				+ " στην Ευρώπη ως προς τον αριθμό διέλευσης των επιβατών\n"
+				+ " και το 26ο μεγαλύτερο στον κόσμο ως προς \n"
+				+ "τον ετήσιο όγκο των εμπορευματοκιβωτίων!");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Η φλογέρα αποτελεί όργανο της κατηγορίας των πνευστών και στα αγγλικά λέγεται recorder!");
+		AnswerTexts.add("Το γυμνό ως αυτόνομο είδος ξαναγυρίζει στην τέχνη, ύστερα από την έκλειψη του Μεσαίωνα,\n"
+				+ " τον καιρό της Αναγέννησης, γύρω στα μέσα του 15ου αιώνα. Από την εποχή εκείνη έγινε θεσμός κάθε\n"
+				+ " γυναικείο γυμνό στη ζωγραφική να έχει πρότυπο την Αφροδίτη, τη θεά του Έρωτα. Οι εξαιρέσεις ήταν πολλές \n"
+				+ "και συχνά δημιουργούσαν σκάνδαλα. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");//26
+		
+		//metrio
+		
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο πίνακας φέρει τον τίτλο «Η Κρίση του Πάριδος» και αναπαριστά ένα διάσημο μυθικό θέμα που προμήνυε\n"
+				+ " τον Τρωικό πόλεμο: την κρίση του Πάρη. Παρουσιάζει έναν διαγωνισμό ομορφιάς ανάμεσα στις σημαντικότερες θεές (Ήρα, Αθηνά, Αφροδίτη). \n"
+				+ "Ο πρίγκηπας της Τροίας, Πάρης, είχε το ρόλο του κριτή. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο πίνακας του Βυζάντιου Περικλή «Εσωτερικό ή Το δωμάτιο του καλλιτέχνη στο Παρίσι» παρουσιάζει αρκετές ομοιότητες \n"
+				+ "και σίγουρα φέρνει στο νου του θεατή τον πίνακα «Υπνοδωμάτιο στην Αρλ» του Βίνσεντ Βαν Γκογκ, ένα από τα πιο\n"
+				+ " διάσημα έργα του καλλιτέχνη.");
+		AnswerTexts.add("Ο ταμπουράς είναι ένα έγχορδο μουσικό όργανο με μακριά ταστιέρα, απόγονος της αρχαιοελληνικής πανδούρας και πρόγονος άλλων οργάνων \n"
+				+ ",όπως το λαούτο και το τούρκικο σάζι.\n"
+				+ " Σήμερα στην Ελλάδα διδάσκεται ως υποχρεωτικό παραδοσιακό όργανο σε πολλά μουσικά σχολεία. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Το γνωστότερο έργο της Ελισάβετ Μουτζάν-Μαρτινέγκου είναι η Αυτοβιογραφία της, ενώ από τα υπόλοιπα έργα της \n"
+				+ "(θεατρικά έργα και ποιήματα) έχουν σωθεί ελάχιστα. ");
+		AnswerTexts.add("Η Επτανησιακή Σχολή αφορά τη καλλιτεχνική παραγωγή στα νησιά του Ιονίου το 18ο και στις αρχές του 19ου αιώνα.\n"
+				+ " Χαρακτηριστικός εκπρόσωπος της Επτανησιακής Σχολής στο χώρο της ποίησης είναι ο Διονύσιος Σολωμός.");
+		AnswerTexts.add("Ο Χαράλαμπος Παχής, ο δημιουργός αυτού του πίνακα, ήταν βραβευμένος Κερκυραίος ζωγράφος που έζησε τον 19ο αιώνα.\n"
+				+ " Η «Πρωτομαγιά στην Κέρκυρα» αποτελεί χαρακτηριστικό έργο της Επτανησιακής Σχολής\n"
+				+ " και θεωρείται ένας πραγματικός θησαυρός ελληνικών λαογραφικών πληροφοριών για την αστικοποιημένη επτανησιακή κοινωνία. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο Θεόδωρος Βρυζάκης, ο ζωγράφος αυτού του έργου, υπήρξε ορφανό του πολέμου της Ανεξαρτησίας \n"
+				+ "(τον πατέρα του τον είχαν κρεμάσει οι Τούρκοι). Σπούδασε στο Μόναχο και έγινε ο κυριότερος  έλληνας ζωγράφος ιστορικών σκηνών.");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ήταν γνωστές ως «Παραμάνες», «Ψυχομάνες» ή «Καλομάνες».");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");//52
+		
+		//dyskolo
+		
+		AnswerTexts.add("Η τεχνική του λαδιού σε μουσαμά, γνωστή και ως η τεχνική της ελαιογραφίας,\n"
+				+ " η οποία χρησιμοποιείται από την αρχαιότητα, είναι ζωγραφική με χρωστικές ουσίες ανακατεμένες με ξηραινόμενο έλαιο,\n"
+				+ " συνήθως λινέλαιο, σε ειδικά προετοιμασμένο καμβά. Διαφορετικά έλαια προσδίδουν διάφορες ιδιότητες στο χρώμα,\n"
+				+ " όπως  φωτεινότητα,  λάμψη ή  διαφορετικό χρόνο ξήρανσης.  ");
+		AnswerTexts.add("Προσέξτε την επίδραση του φωτός πάνω στις μορφές: το μωρό «λαμπαδιάζει» ολόλευκο και ολόξανθο από το φυσικό φως\n"
+				+ " που εισβάλλει από το παράθυρο. Γίνεται έτσι το σύμβολο της νέας ζωής που ανατέλλει. Το φως που έρχεται αντίθετα «ανάβει»\n"
+				+ " και τονίζει με μια φωτεινή αύρα τα περιγράμματα του κοριτσιού. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Συγκεκριμένα ο πίνακας αυτός δημιουργήθηκε από τον Νικόλαο Λύτρα το 1925,\n"
+				+ " μόλις 2 χρόνια πριν τον αιφνίδιο θάνατό του από φυματίωση τον Δεκέμβριο του 1927. ");
+		AnswerTexts.add("Ο Ν.Λύτρας θεωρείται ένας από τους κύριους ανανεωτές της ελληνικής ζωγραφικής καθώς στα λίγα χρόνια\n"
+				+ " που δίδαξε στην Ανώτατη Σχολή Καλών Τεχνών, κατάφερε να αλλάξει τη δομή και τον ρόλο των εργαστηρίων \n"
+				+ "και πρόλαβε να εισαγάγει στη σχολή τα νέα ρεύματα, καθώς και μια νέα οπτική της τέχνης και της διδασκαλίας της. \n"
+				+ "Δυστυχώς όμως έφυγε από την ζωή νέος αφήνοντας πίσω του πρωτοποριακό έργο, η αναγνώριση του οποίου ήλθε αργότερα.");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο Νικόλαος Λύτρας, έπειτα από μία σειρά πορτρέτων που εικονίζουν τη μαθήτρια και μελλοντική σύζυγό του,\n"
+				+ "το 1917 φιλοτεχνεί αυτό το πορτρέτο το οποίο και αφιερώνει στη γυναίκα του, επίσης ζωγράφο, Μαρία Χορς.\n"
+				+ " Αδιαμφισβήτητα αποτελεί μία από τις ωραιότερες προσωπογραφίες της μοντέρνας τέχνης. ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο Νικόλαος Λύτρας ήταν διακεκριμένος Έλληνας ζωγράφος των αρχών του 20ού αιώνα. \n"
+				+ "Σπούδασε ζωγραφική στην μετέπειτα Ανωτάτη Σχολή Καλών Τεχνών της Αθήνας, με δάσκαλους τον πατέρα του Νικηφόρο \n"
+				+ "και τον Γ. Ιακωβίδη και έπειτα στο εξωτερικό. Θεωρείται πως με την ιδιαίτερη τεχνοτροπία του σε σχέση με το χρώμα,\n"
+				+ " εισήγαγε στην Ελλάδα τον εξπρεσιονισμό.  ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Ο πίνακας είναι προσωπογραφία του Φαναριώτη Γεωργίου Κωτσάκη!");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add(" ");
+		AnswerTexts.add("Στο έργο του «Το αίνιγμα της φυσιογνωμίας του ανθρώπου», ο Σπαχής συνδυάζει την τεχνική του λαδιού \n"
+				+ "σε μουσαμά με μία ανάγλυφη γύψινη φιγούρα, δίνοντας στην εικόνα μία νέα διάσταση. ");
+		AnswerTexts.add("Ο Γιάννης Γαΐτης είναι ένας από τους πιο χαρακτηριστικούς και πρωτότυπους εκπροσώπους της Ποπ-αρτ στην Ελλάδα.\n"
+				+ " Δημιούργησε μια αρχετυπική σχηματοποιημένη φιγούρα που συμπύκνωνε τα χαρακτηριστικά του ανθρώπου της μαζικής,\n"
+				+ "απρόσωπης καταναλωτικής κοινωνίας η οποία τελικά έγινε σήμα κατατεθέν της τέχνης του. \n"
+				+ "Με το αρχετυπικό αυτό σύμβολο ο Γαΐτης κατάφερε να διατυπώσει ένα οξύ κοινωνικό σχόλιο, δημιουργώντας αναγνωρίσιμες \n"
+				+ "εικόνες με χιούμορ και φαντασία, που παραμένουν ευχάριστες και διακοσμητικές, παρά τη δυσάρεστη πραγματικότητα που καταγγέλλουν.");//75		
 	}
 	
 	public void ConstructHints() {
@@ -806,7 +955,7 @@ public class MultiplePanels implements ActionListener{
 			AnswerLabel.setFont(new Font(null,Font.CENTER_BASELINE,20));	
 			AnswerLabel.setEditable(false);
 			AnswerFrame.add(AnswerLabel);
-			AnswerFrame.setSize(700,300);
+			AnswerFrame.setSize(1000,300);
 			AnswerFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			AnswerFrame.getContentPane().setBackground( Color.WHITE );
 			AnswerFrame.setLocationRelativeTo(null); 
@@ -843,18 +992,18 @@ public class MultiplePanels implements ActionListener{
 		
 		
 		ConstructQuestions();
-    		ConstructImages();
-    		ConstructAnswers();
-    		CorrectAnswers();
+    	ConstructImages();
+    	ConstructAnswers();
+    	CorrectAnswers();
 		ConstructHints();
-    		ConstructAnswerTexts();
+    	ConstructAnswerTexts();
     		
 	}
 	
 	public void setPanels(){ 
 		panel1.setBackground(Color.white);
-    		panel2.setBackground(Color.white);
-    		panel3.setBackground(Color.white);
+    	panel2.setBackground(Color.white);
+    	panel3.setBackground(Color.white);
     		
     		
 	}
@@ -875,7 +1024,6 @@ public class MultiplePanels implements ActionListener{
 		}
 		
 		
-		
 		//add image to panel1
 		JLabel imageLabel = new JLabel(images.get(question_number));
 		panel1.add(imageLabel);
@@ -885,11 +1033,11 @@ public class MultiplePanels implements ActionListener{
 		questionLabel.setEditable(false);
 		questionLabel.setSize(200, 200);
 		questionLabel.setFont(new Font(null,Font.LAYOUT_LEFT_TO_RIGHT,20));
-		questionLabel.setText(questions[question_number][0]);
+		questionLabel.setText(questions.get(question_number));
 		panel3.add(questionLabel,BorderLayout.BEFORE_FIRST_LINE);
 		
 		//add message that informs the player if their answer was correct or wrong to panel3
-    		messageLabel.setSize(100, 100);
+    	messageLabel.setSize(100, 100);
 		messageLabel.setFont(new Font(null,Font.BOLD,25));
 		messageLabel.setHorizontalTextPosition(JLabel.CENTER);
 		messageLabel.setVerticalTextPosition(JLabel.CENTER);
@@ -906,7 +1054,7 @@ public class MultiplePanels implements ActionListener{
 			HintButton.setPreferredSize(new Dimension(50, 50));
 			HintButton.setBackground(Color.lightGray);
 			try {
-				Image icon = ImageIO.read(getClass().getResource("hintaki.png"));
+				Image icon = ImageIO.read(getClass().getResource("/hintaki.png"));
 				HintButton.setIcon(new ImageIcon(icon));
 			} catch (IOException ex) {
 			}
@@ -923,7 +1071,7 @@ public class MultiplePanels implements ActionListener{
 			HintLabel.setEditable(false);
 			
 				try {
-					JLabel background = new JLabel(new ImageIcon((ImageIO.read(getClass().getResource("hint2.png")))));
+					JLabel background = new JLabel(new ImageIcon((ImageIO.read(getClass().getResource("/hint2.png")))));
 					HintFrame.add(background);
 				    	background.setLayout(new FlowLayout());
 				    	background.add(HintLabel);
@@ -1012,11 +1160,10 @@ public class MultiplePanels implements ActionListener{
 			frame.add(panel1,BorderLayout.BEFORE_FIRST_LINE);
 			frame.add(panel2,BorderLayout.PAGE_END);
 			frame.add(panel3,BorderLayout.CENTER);
-			frame.setSize(1200,1050);
+			frame.setSize(1200,1000);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setLocationRelativeTo(null);  
 			frame.setVisible(true);
-
 			
 	}
 	
@@ -1032,18 +1179,18 @@ public class MultiplePanels implements ActionListener{
 			panel3.setVisible(false);
 			
 			panel1 = new JPanel(); 
-		     	panel2 = new JPanel();
-		     	panel3  = new JPanel();
+		    panel2 = new JPanel();
+		    panel3  = new JPanel();
 			
-		     	HintFrame.dispose();
+		    HintFrame.dispose();
+		    AnswerFrame.setVisible(false);
 		   	AnswerFrame.dispose();
 			
-		     	setPanels();
-		     	setAllFrames();
+		    setPanels();
+		    setAllFrames();
 		
 		}
 
 	
 	}
 }
-
