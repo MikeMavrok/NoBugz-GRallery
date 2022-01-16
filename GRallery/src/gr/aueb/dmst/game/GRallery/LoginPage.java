@@ -13,13 +13,14 @@ import java.awt.event.ActionListener;
 
 public class LoginPage  implements ActionListener{
 	JFrame frame = new JFrame();
-	JButton loginButton = new JButton("Login");
-	JButton resetButton = new JButton("Reset");
+	JButton loginButton = new JButton("Εντάξει");
+	JButton resetButton = new JButton("Καθαρισμός");
 	JTextField userIDField = new JTextField();
 	JTextField userNameField = new JTextField();
-	JLabel userIDLabel = new JLabel("userID:");
-	JLabel userNameLabel = new JLabel("userName:");
+	JLabel userIDLabel = new JLabel("Id Παίκτη:");
+	JLabel userNameLabel = new JLabel("Όνομα:");
 	JLabel messageLabel = new JLabel();
+	
 	
 	HashMap<String,String> logininfo = new HashMap<String,String>();
 	LoginPage(HashMap<String,String> loginInfoOriginal){
@@ -69,17 +70,17 @@ public class LoginPage  implements ActionListener{
 			if(logininfo.containsKey(userID)) {
 				if(logininfo.get(userID).equals(userName)){
 					messageLabel.setForeground(Color.green);
-					messageLabel.setText("Login successful");
+					messageLabel.setText("Επιτυχής Σύνδεση");
 					WelcomePage welcomePage = new WelcomePage(userName);
 				} else {
 					messageLabel.setForeground(Color.red);
-					messageLabel.setText("Wrong userName");
+					messageLabel.setText("Λάθος όνομα!");
 				}
 				
 			}
 			else {
 				messageLabel.setForeground(Color.red);
-				messageLabel.setText("Wrong userID");	
+				messageLabel.setText("Λάθος id Παίκτη!");	
 			}
 		}
 	}
