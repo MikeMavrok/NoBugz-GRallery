@@ -955,7 +955,7 @@ public class MultiplePanels implements ActionListener{
 			AnswerLabel.setEditable(false);
 			AnswerFrame.add(AnswerLabel);
 			AnswerFrame.setSize(1000,300);
-			AnswerFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			AnswerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			AnswerFrame.getContentPane().setBackground( Color.WHITE );
 			AnswerFrame.setLocationRelativeTo(null); 
 			AnswerFrame.setVisible(true);
@@ -1060,7 +1060,7 @@ public class MultiplePanels implements ActionListener{
 			panel2.add(HintButton);
 			JTextArea HintLabel = new JTextArea();
 			HintFrame.setSize(500,400);
-			HintFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			HintFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			HintFrame.getContentPane().setBackground( Color.WHITE );
 			HintFrame.setLocationRelativeTo(null);  
 
