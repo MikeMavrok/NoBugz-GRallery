@@ -986,6 +986,16 @@ public class MultiplePanels implements ActionListener{
 		messageLabel.setVisible(true);
 		b[QuestionNumber][x].setBackground(Color.RED);
 	}
+	public void setCorrectGreen(int QuestionNumber) {
+		//if player's answer is wrong this method shows which was the correct one by turning its button green
+		int x = -1;
+		for(int j = 0; j < 4; j++) {
+			if(CorrectAnswers[QuestionNumber] == answers[QuestionNumber][j]) {
+				x = j;
+			}
+		}
+		b[QuestionNumber][x].setBackground(Color.green);
+	}
 
 	MultiplePanels(){
 		
@@ -1036,7 +1046,7 @@ public class MultiplePanels implements ActionListener{
 		panel3.add(questionLabel,BorderLayout.BEFORE_FIRST_LINE);
 		
 		//add message that informs the player if their answer was correct or wrong to panel3
-    	messageLabel.setSize(100, 100);
+    		messageLabel.setSize(100, 100);
 		messageLabel.setFont(new Font(null,Font.BOLD,25));
 		messageLabel.setHorizontalTextPosition(JLabel.CENTER);
 		messageLabel.setVerticalTextPosition(JLabel.CENTER);
@@ -1052,6 +1062,7 @@ public class MultiplePanels implements ActionListener{
 			JButton HintButton = new JButton();
 			HintButton.setPreferredSize(new Dimension(50, 50));
 			HintButton.setBackground(Color.lightGray);
+			HintButton.setToolTipText("Press this button if you need help to answer");
 			try {
 				Image icon = ImageIO.read(getClass().getResource("/hintaki.png"));
 				HintButton.setIcon(new ImageIcon(icon));
@@ -1113,6 +1124,7 @@ public class MultiplePanels implements ActionListener{
 	                		CorrectButtonPressed(question_number,0);
 	                	}else {
 	                		WrongButtonPressed(question_number,0);
+					setCorrectGreen(question_number);
 	                	}
 	                }else if(e.getSource() == b[question_number][1] ) {
 	                	
@@ -1122,6 +1134,7 @@ public class MultiplePanels implements ActionListener{
 	                		CorrectButtonPressed(question_number,1);
 	                	}else {
 	                		WrongButtonPressed(question_number,1);
+					setCorrectGreen(question_number);
 	                	}
 	                }else if(e.getSource() == b[question_number][2] ) {
 	                	
@@ -1131,6 +1144,7 @@ public class MultiplePanels implements ActionListener{
 	                		CorrectButtonPressed(question_number,2);
 	                	}else {
 	                		WrongButtonPressed(question_number,2);
+					setCorrectGreen(question_number);
 	                	}
 	                }else if(e.getSource() == b[question_number][3] ) {
 	                	
@@ -1140,6 +1154,7 @@ public class MultiplePanels implements ActionListener{
 	                		CorrectButtonPressed(question_number,3);
 	                	}else {
 	                		WrongButtonPressed(question_number,3);
+					setCorrectGreen(question_number);
 	                	}
 	                }
 	        	}
@@ -1178,15 +1193,15 @@ public class MultiplePanels implements ActionListener{
 			panel3.setVisible(false);
 			
 			panel1 = new JPanel(); 
-		    panel2 = new JPanel();
-		    panel3  = new JPanel();
+		   	panel2 = new JPanel();
+		    	panel3  = new JPanel();
 			
-		    HintFrame.dispose();
-		    AnswerFrame.setVisible(false);
+		    	HintFrame.dispose();
+		    	AnswerFrame.setVisible(false);
 		   	AnswerFrame.dispose();
 			
-		    setPanels();
-		    setAllFrames();
+		    	setPanels();
+		    	setAllFrames();
 		
 		}
 
