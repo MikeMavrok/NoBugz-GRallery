@@ -322,11 +322,10 @@ public class MultiplePanels implements ActionListener{
 		answers[26][3] = "2 χιλ. Ευρώ";
 
 
-
-		answers[27][0] = "Ο Μενέλαος";
-		answers[27][1] = "Ο Αγέλαος";
-		answers[27][2] = "Ο Πηλέας";
-		answers[27][3] = "Ο Πάρης";
+		answers[27][0] = "Σύνταγμα";
+		answers[27][1] = "Ομόνοια";
+		answers[27][2] = "Βικτώρια";
+		answers[27][3] = "Μοναστηράκι";
 
 
 
