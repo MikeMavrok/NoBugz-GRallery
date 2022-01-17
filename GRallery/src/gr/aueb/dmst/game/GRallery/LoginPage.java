@@ -1,13 +1,3 @@
-package gr.aueb.dmst.game.GRallery;
-import java.util.HashMap; 
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -57,7 +47,7 @@ public class LoginPage  implements ActionListener{
 		frame.setVisible(true);
 	}
 	
-	static String username2 = "" ;
+	public static String username2 = "" ;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -69,7 +59,6 @@ public class LoginPage  implements ActionListener{
 		if (e.getSource() == loginButton){
 			String userID = userIDField.getText();
 			String userName = userNameField.getText();
-			username2 = userName;
 			if(logininfo.containsKey(userID)) {
 				if(logininfo.get(userID).equals(userName)){
 					messageLabel.setForeground(Color.green);
