@@ -34,6 +34,8 @@ public class MultiplePanels implements ActionListener{
 	JButton NextQuestion = new JButton("Next Question");
 	
 	JLabel messageLabel = new JLabel();
+	JTextArea HintLabel = new JTextArea();
+	JTextArea AnswerLabel = new JTextArea();
 	
     	//create 3 different panels to place our labels (image-text-buttons)
 	JPanel panel1 = new JPanel(); 
@@ -948,7 +950,6 @@ public class MultiplePanels implements ActionListener{
 		AnsweredQuestions = AnsweredQuestions + 1; //one more question gets answered
 		if(AnswerTexts.get(x) != " ") {
 			//if there is an explanation for the answer it shows up in a new frame
-			JTextArea AnswerLabel = new JTextArea();
 			AnswerLabel.setText(AnswerTexts.get(x));
 			AnswerLabel.setSize(200, 200);
 			AnswerLabel.setFont(new Font(null,Font.CENTER_BASELINE,20));	
@@ -1069,7 +1070,7 @@ public class MultiplePanels implements ActionListener{
 			} catch (IOException ex) {
 			}
 			panel2.add(HintButton);
-			JTextArea HintLabel = new JTextArea();
+			
 			HintFrame.setSize(500,400);
 			HintFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			HintFrame.getContentPane().setBackground( Color.WHITE );
@@ -1196,8 +1197,10 @@ public class MultiplePanels implements ActionListener{
 		   	panel2 = new JPanel();
 		    	panel3  = new JPanel();
 			
-		    	HintFrame.dispose();
-		    	AnswerFrame.setVisible(false);
+		    	HintFrame.remove(HintLabel);
+		   	HintFrame.dispose();
+		   
+		    	AnswerFrame.remove(AnswerLabel);
 		   	AnswerFrame.dispose();
 			
 		    	setPanels();
