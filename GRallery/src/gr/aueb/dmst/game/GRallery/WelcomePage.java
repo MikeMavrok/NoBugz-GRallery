@@ -1,15 +1,12 @@
 package gr.aueb.dmst.game.GRallery;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -31,13 +28,16 @@ public class WelcomePage extends JScrollPane implements ActionListener {
 		 		+ "Παίξε αυτό το κουίζ με τους φίλους σου και δες ποιος θα είναι ο νικητής!\n\n"
 				+ "ΟΔΗΓΙΕΣ ΠΑΙΧΝΙΔΙΟΥ\n"
 		 		+"Το παιχνίδι χωρίζεται σε 3 επίπεδα δυσκολίας: εύκολο-μεσαίο-δύσκολο.\r\n"
-		 		+ "Ξεκινώντας από το πρώτο επίπεδο, ο παίκτης καλείται να επιλέξει τις σωστές απαντήσεις σε ερωτήσεις πολλαπλής επιλογής, "
-		 		+ "με βάση στοιχεία που του δίνονται ή τις γενικότερες γνώσεις του.\r\n"
-		 		+ "Έχοντας ολοκληρώσει τις ερωτήσεις του κάθε επιπέδου, για να προκριθεί στο αμέσως επόμενο επίπεδο,\n"
-		 		+ "πρέπει να έχει απαντήσει σωστά σε τουλάχιστον το 1/3 των απαντήσεων του προηγούμενου επιπέδου. \r\n"
-		 		+ "Αν δεν καταφέρει να περάσει στο επόμενο επίπεδο, το παιχνίδι σταματάει και καταχωρείται η τελική βαθμολογία του παίκτη.\r\n"
-		 		+ "Κάθε παίκτης έχει στη διάθεσή του συνολικά 3 ευκαιρίες για βοήθεια (hints) που παρέχονται σε συγκεκριμένες ερωτήσεις.\r\n"
-		 		+ "Στο τέλος, θα μπορείς να δεις την επίδοσή σου, καθώς και των υπόλοιπων παικτών.\r\n");
+		 		+ "Ξεκινώντας από το πρώτο επίπεδο, καλείσαι να επιλέξεις τις σωστές απαντήσεις σε ερωτήσεις πολλαπλής επιλογής, "
+		 		+ "με βάση στοιχεία που σου δίνονται ή τις γενικότερες γνώσεις σου.\r\n"
+		 		+ "Θα χρειαστεί να απαντήσεις σύνολο 10 ερωτήσεις. Οι 3 πρώτες θα είναι από το εύκολο επίπεδο,\n"
+		 		+ "οι 4 επόμενες από το μεσαίο και οι 3 τελευταίες από το δύσκολο επίπεδο.\n"
+		 		+ "Κάθε σωστή απάντηση από το εύκολο επίπεδο βαθμολογείται με +10, από το μεσαίο με +20 και από το δύσκολο με +30 !\r\n"
+		 		+ "Έχεις τη δυνατότητα για βοήθεια (hints) που παρέχονται σε συγκεκριμένες ερωτήσεις,"
+		 		+ "όμως αν τις χρησιμοποιήσεις θα κοστίζουν -5 πόντους.\r\n"
+		 		+ "Στο τέλος, θα μπορείς να δεις την επίδοσή σου σε σύγκριση με την καλύτερή σου προσπάθεια (Highscore) !\r\n");
+		
+		
 		panel.add(textArea,BorderLayout.BEFORE_FIRST_LINE); 
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
@@ -81,6 +81,7 @@ public class WelcomePage extends JScrollPane implements ActionListener {
 		frame.dispose();
 			if(e.getSource() == startButton) {
 				MultiplePanels multiplePanels = new MultiplePanels();
+				multiplePanels.setPanels();
 				multiplePanels.setAllFrames();
 			}
 	}
@@ -89,4 +90,3 @@ public class WelcomePage extends JScrollPane implements ActionListener {
 	
 		
 		
-
