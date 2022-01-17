@@ -1130,7 +1130,7 @@ public class MultiplePanels implements ActionListener{
 				return reader.readLine();
 			} catch (IOException e) {
 				
-				return LoginPage.username2 + ":0";
+				return ":0";
 			} 
 			 finally {
 				 
@@ -1165,7 +1165,7 @@ public class MultiplePanels implements ActionListener{
 			
 			if (counter < 3) {
 				score = score + 10;
-			}else if (counter < 9) {
+			}else if (counter < 7) {
 				score= score + 20;
 			}else if (counter < 10){
 				score = score + 30;
@@ -1181,10 +1181,13 @@ public class MultiplePanels implements ActionListener{
 									
 		}
 		
+		String username;
+		
 		public void CheckHighScore() {
 			if (score > Integer.parseInt(GetHighScoreValue().split(":")[1])) {
-				highscore = LoginPage.username2 + ":" + score;
-				highScoreLabel.setText("Highscore" + highscore);
+				highscore = username + ":" + score;
+				System.out.print(username);
+				highScoreLabel.setText("Highscore " + highscore);
 				File scoreFile = new File("highscore.txt");
 				if (!scoreFile.exists()) {
 					try {
@@ -1235,9 +1238,9 @@ public class MultiplePanels implements ActionListener{
 			b[QuestionNumber][x].setBackground(Color.green);
 		}
 		
-	MultiplePanels(){
+	MultiplePanels(String username){
 		
-		
+		this.username = username;
 		ConstructQuestions();
     	ConstructImages();
     	ConstructAnswers();
