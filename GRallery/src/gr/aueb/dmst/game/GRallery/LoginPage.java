@@ -56,6 +56,8 @@ public class LoginPage  implements ActionListener{
 		frame.setLayout(null);
 		frame.setVisible(true);
 	}
+	
+	static String username2 = "" ;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -67,6 +69,7 @@ public class LoginPage  implements ActionListener{
 		if (e.getSource() == loginButton){
 			String userID = userIDField.getText();
 			String userName = userNameField.getText();
+			username2 = userName;
 			if(logininfo.containsKey(userID)) {
 				if(logininfo.get(userID).equals(userName)){
 					messageLabel.setForeground(Color.green);
