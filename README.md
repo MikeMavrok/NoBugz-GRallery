@@ -1,6 +1,7 @@
 # NoBugz-GRallery
 o	Οδηγίες μεταγλώττισης του προγράμματος (π.χ. mvn)
--μέσω Maven pom.xml
+-Μέσω Eclipse 
+(Έχει γίνει και προσπάθεια μέσω Maven - pom.xml)
 
 o	Οδηγίες εκτέλεσης του προγράμματος 
 -java -jar GRallery.jar
