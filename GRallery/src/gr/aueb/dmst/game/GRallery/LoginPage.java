@@ -1,3 +1,13 @@
+package gr.aueb.dmst.game.GRallery;
+import java.util.HashMap; 
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -63,6 +73,7 @@ public class LoginPage  implements ActionListener{
 				if(logininfo.get(userID).equals(userName)){
 					messageLabel.setForeground(Color.green);
 					messageLabel.setText("Επιτυχής Σύνδεση");
+					frame.dispose();
 					WelcomePage welcomePage = new WelcomePage(userName);
 				} else {
 					messageLabel.setForeground(Color.red);
