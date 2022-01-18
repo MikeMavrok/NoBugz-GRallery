@@ -11,7 +11,8 @@ HashMap<String, String> logininfo = new HashMap<String, String>();
 		logininfo.put("3","Zoe");
 		logininfo.put("4","George");
 		logininfo.put("5","Olga");
-		logininfo.put("6","Mike");
+		logininfo.put("6","Giouli");
+		logininfo.put("7","Mike");
 		
 		
 	}
