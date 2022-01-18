@@ -77,13 +77,13 @@ public class LoginPage  implements ActionListener{
 					WelcomePage welcomePage = new WelcomePage(userName);
 				} else {
 					messageLabel.setForeground(Color.red);
-					messageLabel.setText("Λάθος όνομα!");
+					messageLabel.setText("Λάθος id Παίκτη!");
 				}
 				
 			}
 			else {
 				messageLabel.setForeground(Color.red);
-				messageLabel.setText("Λάθος id Παίκτη!");	
+				messageLabel.setText("Λάθος όνομα!");	
 			}
 		}
 	}
