@@ -5,16 +5,18 @@ public class Users {
 HashMap<String, String> logininfo = new HashMap<String, String>();
 	
 	Users(){
-		logininfo.put("1","Κατερίνα");
-		logininfo.put("2","Ασημίνα");
-		logininfo.put("3","Ζωή");
-		logininfo.put("4","Γιώργος");
-		logininfo.put("5","Όλγα");
-		logininfo.put("6","Μιχάλης");
+		
+		logininfo.put("1","Katerina");
+		logininfo.put("2","Asimina");
+		logininfo.put("3","Zoe");
+		logininfo.put("4","George");
+		logininfo.put("5","Olga");
+		logininfo.put("6","Mike");
+		
 		
 	}
 	
-	public HashMap getLoginInfo() {
+	public HashMap<String, String> getLoginInfo() {
 		return logininfo;
 	}
 }
