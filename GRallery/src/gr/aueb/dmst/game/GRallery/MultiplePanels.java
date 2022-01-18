@@ -32,7 +32,7 @@ import java.io.IOException;
 
 
 public class MultiplePanels implements ActionListener{
-	public static final Color DGREEN = new Color(0, 153, 0);
+	//public static final Color DGREEN = new Color(0, 153, 0);
 
 	JFrame frame = new JFrame("GRallery");
 	JFrame HintFrame = new JFrame("Hint");
@@ -41,14 +41,14 @@ public class MultiplePanels implements ActionListener{
 	JTextArea AnswerLabel = new JTextArea();
 	
 	JButton[][] b = new JButton[75][4];
-	JButton NextQuestion = new JButton("Next Question");
+	JButton NextQuestion = new JButton("Επόμενο");
 	
 	JLabel messageLabel = new JLabel();
     JProgressBar progressbar = new JProgressBar(0,100);
     
     
     JLabel scoreLabel = new JLabel("Score: 0  ");
-    JLabel highScoreLabel = new JLabel("High Score:  " + GetHighScoreValue() );
+    JLabel highScoreLabel = new JLabel("High Score " + GetHighScoreValue() );
 	
     	//create 3 different panels to place our labels (image-text-buttons)
 	JPanel panel1 = new JPanel(); 
@@ -479,7 +479,7 @@ public class MultiplePanels implements ActionListener{
 
 		answers[44][0] = "Η Ελλάς ευγνωμονούσα";
 		answers[44][1] = "Η αυτοθυσία της μάνας";
-		answers[44][2] = "Η Ελλάδα πάνω στα ερείπια του Μεσολογγίου";
+		answers[44][2] = "Η Ελλάδα στα ερείπια του Μεσολογγίου";
 		answers[44][3] = "Ο θάνατος";
 
 
@@ -589,10 +589,10 @@ public class MultiplePanels implements ActionListener{
 
 
 
-		answers[60][0] = "Την επέμβαση του ανθρώπου στο φυσικό περιβάλλον";
+		answers[60][0] = "Την επέμβαση του ανθρώπου";
 		answers[60][1] = "Την ομορφιά του ελληνικού καλοκαιριού";
-		answers[60][2] = "Την ισότιμη συμμετοχή φυσικού και δομημένου περιβάλλοντος";
-		answers[60][3] = "Την ομορφιά μόνο του φυσικού περιβάλλοντος ";
+		answers[60][2] = "Φυσικό και δομημένο περιβάλλον";
+		answers[60][3] = "Ομορφιά μόνο του φυσικού περιβάλλοντος ";
 
 
 
@@ -739,11 +739,14 @@ public class MultiplePanels implements ActionListener{
 		questions.add("Ποιος σταθμός είναι αυτός που απεικονίζεται στον πίνακα;");
 		questions.add("Ο γνωστός και με το όνομα Αλέξανδρος, ήταν πρόσωπο της ελληνικής μυθολογίας,\n γιος του Πριάμου, βασιλιά της Τροίας. Ο γνωστότερος μύθος που συνδέεται με τον είναι ο \n σχετικός με την «απαγωγή» της Ωραίας Ελένης από αυτόν, που προκάλεσε τον Τρωικό Πόλεμο. Προς το τέλος αυτού \n του πολέμου, ο ..... πλήγωσε θανάσιμα στη φτέρνα τον Αχιλλέα με ένα βέλος.");
 		questions.add("Το απεικονιζόμενο μέρος είναι το λιμάνι της πρωτεύουσας της Δανίας. \n Ποιο λιμάνι είναι;");
-		questions.add("31");
+		questions.add("“H μεγαλύτερή μου χαρά ήταν, όταν η Oρελί μου μ’ έπαιρνε από το χέρι και πηγαίναμε για ύπνο στην κρεβατοκάμαρή μας.\n"
+				+ "Ποιος πιστεύετε ότι είναι ο τίτλος του έργου;");
 		questions.add("Το έργο έχει τίτλο «Μετά τη βροχή» και απεικονίζει μια πολύ γνωστή λεωφόρο της Αθήνας. \n Πρόκειται για τη Λεωφόρο:");
 		questions.add("Ο δημιουργός του έργου υπήρξε κορυφαίος Έλληνας λαϊκός ζωγράφος της νεοελληνικής τέχνης και αγιογράφος. \n Κυρίαρχο στοιχείο του έργου του είναι η ελληνικότητα και η εικονογράφηση της ελληνικής \n λαϊκής παράδοσης και ιστορίας.\n Ποιο ήταν το όνομά του;");
 		questions.add("Στον παραπάνω πίνακα διακρίνουμε το κάστρο μίας ιστορικής πόλης της Πελοποννήσου. \n Τα τείχη ποιας πόλης απεικονίζονται;");
-		questions.add("35");
+		questions.add("Η απεικονιζόμενη περιοχή είναι δημοτική ενότητα και βρίσκεται στο Βόρειο Τομέα του Αθηναϊκού Πεδίου.\n"
+				+ " Ήταν μια από τις 12 πόλεις της αρχαίας Αθήνας και το όνομά της προέρχεται από γνωστό ποταμό.\n"
+				+ "Ποια περιοχή της Αθήνας απεικονίζεται στον πίνακα;");
 		questions.add("Στον πίνακα απεικονίζεται η κύρια είσοδος της ακρόπολης των Μυκηνών, \n του κύριου κέντρου του Μυκηναϊκού Πολιτισμού. \n Πώς ονομάζεται η πύλη;");
 		questions.add("Παρατηρείστε ότι ο συγκεκριμένος πίνακας του Θεόφιλου είναι σχεδιασμένος πάνω στο «επίπεδο», \n δηλαδή οι 3 διαστάσεις του χώρου δεν αποτυπώνονται σαφώς και απουσιάζει η προοπτική. \n Αντιθέτως, περισσότερη έμφαση έχει δοθεί στα χρώματα. \n Ποια κατηγορία ζωγράφων ακολουθούν συνήθως αυτή την προσέγγιση;");
 		questions.add("Το έργο ποιου διάσημου καλλιτέχνη σας θυμίζει ο παραπάνω πίνακας;");
@@ -760,7 +763,7 @@ public class MultiplePanels implements ActionListener{
 		questions.add("Ο σπουδαίος αυτός πίνακας απομνημονεύει ένα από τα πιο τραγικά και ξακουστά επεισόδια του Αγώνα,\n"
 				+ "που έλαβε χώρα τη νύχτα της 10ης Απριλίου 1826.\n "
 				+ "Ποιο εμβληματικό ιστορικό γεγονός της ελληνικής επανάστασης απεικονίζεται στον συγκεκριμένο πίνακα;");
-		questions.add("Το «Εμπρός στο τζάκι» αποτελεί ένα από τα πιο γνωστά έργα της ζωγράφου Σοφίας Λασκαρίδου \n καθώς δέχθηκε πολύ ευνοϊκά σχόλια από Γάλλους κριτικούς, όταν παρουσιάστηκε το 1914 στο Salon των Γάλλων καλλιτεχνών. \n Ποια τεχνική πιστεύετε πως έχει χρησιμοποιήσει η καλλιτέχνης στον συγκεκριμένο πίνακα;");
+		questions.add("Το «Εμπρός στο τζάκι» αποτελεί ένα από τα πιο γνωστά έργα της ζωγράφου Σοφίας Λασκαρίδου \n καθώς δέχθηκε πολύ ευνοϊκά σχόλια από Γάλλους\n κριτικούς, όταν παρουσιάστηκε το 1914 στο Salon των Γάλλων καλλιτεχνών. \n Ποια τεχνική πιστεύετε πως έχει χρησιμοποιήσει η καλλιτέχνης στον συγκεκριμένο πίνακα;\n");
 		questions.add("Ο Παύλος Ροδοκανάκης φιλοτέχνησε τον συγκεκριμένο πίνακα γύρω στο 1919. Το έργο θεωρείται \n συμβολιστικό και διακρίνεται για την καθαρά ιδεαλιστική φωνή και το ποιητικό του περιεχόμενο. \n Ποιος πιστεύετε ότι είναι ο τίτλος του;");
 		questions.add("Το συγκεκριμένο επάγγελμα της εικονιζόμενης γυναίκας, υπήρχε στην Ελλάδα σε εποχές δύσκολες\n"
 				+ " για τους ανθρώπους (πόλεμοι, κατοχή) και ειδικά για τις νέες μητέρες και για τα νεογέννητα μωρά τους.\n"
@@ -952,8 +955,7 @@ public class MultiplePanels implements ActionListener{
 				+ " απεικονίζει δε ένα έθιμο από τον καιρό της Τουρκοκρατίας.\n Οι γονείς αρραβώνιαζαν τα παιδιά από μικρά,\n"
 				+ " ίσως για να τα προστατέψουν από το παιδομάζωμα. \nΣτο εσωτερικό ενός χωριάτικου σπιτιού ξετυλίγεται η χαρούμενη σκηνή\n"
 				+ " σε ημικυκλική διάταξη. Στο κέντρο της σκηνής ο ιερέας έχει\n ήδη περάσει το δαχτυλίδι στο ξαφνιασμένο αγοράκι,\n"
-				+ " ενώ το κοριτσάκι χαμηλοκοιτάζει ντροπαλό \nστο κάλεσμα του γέροντα να του φορέσει τον αρραβώνα. \n"
-				+ "Οι γονείς και οι συγγενείς συμμετέχουν με χαρούμενη διάθεση στη σκηνή. ");
+				+ " ενώ το κοριτσάκι χαμηλοκοιτάζει ντροπαλό \nστο κάλεσμα του γέροντα να του φορέσει τον αρραβώνα. \n");
 		AnswerTexts.add("Ο πίνακας φέρει τον τίτλο «Ο τεχνοκρίτης», που σημαίνει κριτικός έργων τέχνης. ");
 		AnswerTexts.add("\r\n"
 				+ "Το Πήλιο είναι βουνό στο Νομό Μαγνησίας, με ύψος 1.624 μέτρα. \nΚατά την Ελληνική μυθολογία ήταν θερινή κατοικία των θεών\n"
@@ -1161,8 +1163,7 @@ public class MultiplePanels implements ActionListener{
 		
 		public void CorrectButtonPressed(int QuestionNumber,int x) {
 			//if they answer correct, pressed button turns green and message "CORRECT" shows up
-			//mexri4 1o level mexri7 2o mexri10 3o
-			
+			//mexri4 1o level mexri7 2o mexri10 3o		
 			if (counter < 3) {
 				score = score + 10;
 			}else if (counter < 7) {
@@ -1172,7 +1173,7 @@ public class MultiplePanels implements ActionListener{
 			}
 			
 			messageLabel.setForeground(Color.GREEN);
-			messageLabel.setText("CORRECT");
+			messageLabel.setText("Σωστό");
 			messageLabel.setVisible(true);
 			b[QuestionNumber][x].setBackground(Color.GREEN);
 			//sethighscore and create file
@@ -1186,6 +1187,7 @@ public class MultiplePanels implements ActionListener{
 		public void CheckHighScore() {
 			if (score > Integer.parseInt(GetHighScoreValue().split(":")[1])) {
 				highscore = username + ":" + score;
+				//System.out.print(username);
 				highScoreLabel.setText("Highscore " + highscore);
 				File scoreFile = new File("highscore.txt");
 				if (!scoreFile.exists()) {
@@ -1220,7 +1222,7 @@ public class MultiplePanels implements ActionListener{
 		public void WrongButtonPressed(int QuestionNumber,int x) {
 			//if they answer wrong, pressed button turns red and message "WRONG" shows up
 			messageLabel.setForeground(Color.red);
-			messageLabel.setText("WRONG");
+			messageLabel.setText("Λάθος");
 			messageLabel.setVisible(true);
 			b[QuestionNumber][x].setBackground(Color.RED);
 		}
@@ -1237,9 +1239,10 @@ public class MultiplePanels implements ActionListener{
 			b[QuestionNumber][x].setBackground(Color.green);
 		}
 		
-	MultiplePanels(String username){
+		MultiplePanels(String username){
+
+			this.username = username;
 		
-		this.username = username;
 		ConstructQuestions();
     	ConstructImages();
     	ConstructAnswers();
@@ -1293,7 +1296,7 @@ public class MultiplePanels implements ActionListener{
 		for (int i = 7 ; i<10 ; i++) {
 			q_numbers.add(numbers.get(i-7));
 		}
-		System.out.print(q_numbers);
+		//System.out.print(q_numbers);
 		return q_numbers;
 	}
 	
@@ -1369,6 +1372,7 @@ public class MultiplePanels implements ActionListener{
 				public void actionPerformed(ActionEvent e) {
 					if(e.getSource() == HintButton) {
 						HintFrame.setVisible(true);
+						//score = score - 5;
 					}
 				}
 			});
@@ -1461,34 +1465,50 @@ public class MultiplePanels implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if (AnsweredQuestions == 10) {
+		panel1.setVisible(false);
+		panel2.setVisible(false);
+		panel3.setVisible(false);
+		
+		
+		frame.dispose();
+		
+	    HintFrame.remove(HintLabel);
+	   	HintFrame.dispose();
+
+	    AnswerFrame.remove(AnswerLabel);
+	   	AnswerFrame.dispose();
+		}
 		
 		if (e.getSource() == NextQuestion) {
 			if (AnsweredQuestions <10) {
-			question_number = q_numbers.get(AnsweredQuestions);
+				question_number = q_numbers.get(AnsweredQuestions);
 			
-			//if NextQuestion button is pressed a new frame shows up with different question
-			panel1.setVisible(false);
-			panel2.setVisible(false);
-			panel3.setVisible(false);
-			
-			panel1 = new JPanel(); 
-		    panel2 = new JPanel();
-		    panel3  = new JPanel();
-			
-		    HintFrame.remove(HintLabel);
-		   	HintFrame.dispose();
-
-		    AnswerFrame.remove(AnswerLabel);
-		   	AnswerFrame.dispose();
-		   	
-		    setPanels();
-		    setAllFrames();
-			}else {
+				//if NextQuestion button is pressed a new frame shows up with different question
+				panel1.setVisible(false);
+				panel2.setVisible(false);
+				panel3.setVisible(false);
 				
+				panel1 = new JPanel(); 
+			    panel2 = new JPanel();
+			    panel3  = new JPanel();
+				
+			    HintFrame.remove(HintLabel);
+			   	HintFrame.dispose();
+	
+			    AnswerFrame.remove(AnswerLabel);
+			   	AnswerFrame.dispose();
+			   	
+			    setPanels();
+			    setAllFrames();
+			}else if (AnsweredQuestions == 10) {			
+			   	
+			   	AnsweredQuestions +=1; 
+			   	//System.out.print("ok");
+				YourScore finalscore = new YourScore(score, highscore);
 			}
 		
 		}
 
-	
 	}
 }
