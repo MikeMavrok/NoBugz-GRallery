@@ -1186,7 +1186,6 @@ public class MultiplePanels implements ActionListener{
 		public void CheckHighScore() {
 			if (score > Integer.parseInt(GetHighScoreValue().split(":")[1])) {
 				highscore = username + ":" + score;
-				System.out.print(username);
 				highScoreLabel.setText("Highscore " + highscore);
 				File scoreFile = new File("highscore.txt");
 				if (!scoreFile.exists()) {
